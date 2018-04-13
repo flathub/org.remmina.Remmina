@@ -479,6 +479,10 @@
                     "url": "https://github.com/FreeRDP/Remmina.git",
                     "tag": "v1.2.0-rcgit.29",
                     "commit": "6b62986b44a47baa91cd637934092a8d3371c3b9"
+                },
+                {
+                    "type": "patch",
+                    "path": "Don-t-truncate-version-string-when-building-from-a-git-tag.patch"
                 }
             ]
         }
