@@ -389,8 +389,11 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/Remmina.git",
-                    "tag": "v1.2.30",
-                    "commit": "4c00ae764edf72525fd47680c55eec0816ac446c"
+                    /**
+                    * Temporary using the last commit to fix a bug
+                    * "tag": "v1.2.30",
+                    */
+                    "commit": "c58143fb269952fa979dceb799e4935735e42261"
                 }
             ]
         }
