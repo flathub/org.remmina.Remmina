@@ -256,7 +256,7 @@
                 "-DWITH_NACL:BOOL=ON",
                 "-DNACL_LIBRARIES:PATH=/app/lib/nacl/",
                 "-DNACL_LIBRARY:PATH=/app/lib/nacl/libnacl.a",
-                "-DNACL_INCLUDE_DIRS:PATH=/app/include/nacl/",
+                "-DNACL_INCLUDE_DIRS:PATH=/app/include/",
                 "-DWITH_EXAMPLES:BOOL=OFF"
             ],
             "sources": [
