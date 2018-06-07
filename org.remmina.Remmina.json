@@ -253,11 +253,26 @@
             "builddir": true,
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
-                "-DWITH_NACL:BOOL=ON",
-                "-DNACL_INCLUDE_DIR:PATH=/app/include/",
-                "-DNACL_LIBRARY:PATH=/app/lib/nacl/libnacl.a",
                 "-DWITH_EXAMPLES:BOOL=OFF"
             ],
+            "build-options" : {
+                "arch": {
+                    "i386": {
+                        "config-opts": [
+                            "-DWITH_NACL:BOOL=ON",
+                            "-DNACL_INCLUDE_DIR:PATH=/app/include/",
+                            "-DNACL_LIBRARY:PATH=/app/lib/nacl/libnacl.a"
+                        ]
+                    },
+                    "x86_64": {
+                        "config-opts": [
+                            "-DWITH_NACL:BOOL=ON",
+                            "-DNACL_INCLUDE_DIR:PATH=/app/include/",
+                            "-DNACL_LIBRARY:PATH=/app/lib/nacl/libnacl.a"
+                        ]
+                    }
+                }
+            },
             "sources": [
                 {
                     "type": "archive",
@@ -276,11 +291,12 @@
                         "sed -e '/shorthostname=/ s/.*/shorthostname=flatpak-builder/g' -i ./do",
                         /* Build */
                         "./do",
+                        "cat ./build/flatpak-builder/log",
                         /* Install */
-                        "mkdir -p /app/lib/nacl",
-                        "install -m644 -t /app/lib/nacl/ ./build/flatpak-builder/lib/*/*.a",
-                        "mkdir -p /app/include/nacl",
-                        "install -m644 -t /app/include/nacl/ ./build/flatpak-builder/include/*/*.h"
+                        "mkdir -v -p /app/lib/nacl",
+                        "install -v -m644 -t /app/lib/nacl/ ./build/flatpak-builder/lib/*/*.a",
+                        "mkdir -v -p /app/include/nacl",
+                        "install -v -m644 -t /app/include/nacl/ ./build/flatpak-builder/include/*/*.h"
                     ],
                     "sources": [
                         {
