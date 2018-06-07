@@ -251,30 +251,13 @@
             "name": "libssh",
             "buildsystem": "cmake-ninja",
             "builddir": true,
-            "build-options" : {
-                "config-opts": [
-                    "-DCMAKE_BUILD_TYPE:STRING=Release",
-                    "-DWITH_EXAMPLES:BOOL=OFF"
-                ],
-                "arch": {
-                    "i386": {
-                        "config-opts": [
-                            "-DWITH_NACL:BOOL=ON",
-                            "-DNACL_LIBRARIES:PATH=/app/lib/nacl/",
-                            "-DNACL_LIBRARY:PATH=/app/lib/nacl/libnacl.a",
-                            "-DNACL_INCLUDE_DIRS:PATH=/app/include/"
-                        ]
-                    },
-                    "x86_64": {
-                        "config-opts": [
-                            "-DWITH_NACL:BOOL=ON",
-                            "-DNACL_LIBRARIES:PATH=/app/lib/nacl/",
-                            "-DNACL_LIBRARY:PATH=/app/lib/nacl/libnacl.a",
-                            "-DNACL_INCLUDE_DIRS:PATH=/app/include/"
-                        ]
-                    }
-                }
-            },
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE:STRING=Release",
+                "-DWITH_NACL:BOOL=ON",
+                "-DNACL_INCLUDE_DIR:PATH=/app/include/",
+                "-DNACL_LIBRARY:PATH=/app/lib/nacl/libnacl.a",
+                "-DWITH_EXAMPLES:BOOL=OFF"
+            ],
             "sources": [
                 {
                     "type": "archive",
@@ -299,8 +282,6 @@
                         "mkdir -p /app/include/nacl",
                         "install -m644 -t /app/include/nacl/ ./build/flatpak-builder/include/*/*.h"
                     ],
-                    /* FIXME: support build on arm */
-                    "only-arches": ["i386", "x86_64"],
                     "sources": [
                         {
                             "type": "archive",
