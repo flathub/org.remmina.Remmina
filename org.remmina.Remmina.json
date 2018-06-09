@@ -253,26 +253,11 @@
             "builddir": true,
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
+                "-DWITH_NACL:BOOL=ON",
+                "-DNACL_INCLUDE_DIR:PATH=/app/include/",
+                "-DNACL_LIBRARY:PATH=/app/lib/nacl/libnacl.a",
                 "-DWITH_EXAMPLES:BOOL=OFF"
             ],
-            "build-options" : {
-                "arch": {
-                    "i386": {
-                        "config-opts": [
-                            "-DWITH_NACL:BOOL=ON",
-                            "-DNACL_INCLUDE_DIR:PATH=/app/include/",
-                            "-DNACL_LIBRARY:PATH=/app/lib/nacl/libnacl.a"
-                        ]
-                    },
-                    "x86_64": {
-                        "config-opts": [
-                            "-DWITH_NACL:BOOL=ON",
-                            "-DNACL_INCLUDE_DIR:PATH=/app/include/",
-                            "-DNACL_LIBRARY:PATH=/app/lib/nacl/libnacl.a"
-                        ]
-                    }
-                }
-            },
             "sources": [
                 {
                     "type": "archive",
@@ -303,6 +288,10 @@
                             "type": "archive",
                             "url": "https://hyperelliptic.org/nacl/nacl-20110221.tar.bz2",
                             "sha256": "4f277f89735c8b0b8a6bbd043b3efb3fa1cc68a9a5da6a076507d067fc3b3bf8"
+                        },
+                        {
+                            "type": "patch",
+                            "path": "patches/nacl-20110221-cpufreq-fallback.patch"
                         }
                     ]
                 }
