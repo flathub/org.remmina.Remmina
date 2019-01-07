@@ -15,9 +15,11 @@
         "/include",
         "/lib/cmake",
         "/lib/pkgconfig",
+        "/share/gnome-session",
         "/share/gtk-doc",
         "/share/man",
-        "/share/pkgconfig"
+        "/share/pkgconfig",
+        "/share/xsessions"
     ],
     "finish-args": [
         /* X11 + XShm access */
@@ -28,7 +30,7 @@
         "--socket=pulseaudio",
         /* Wayland access */
         "--socket=wayland",
-        /* SSH_AUTH_SOCK access */
+        /* SSH_AUTH_SOCK access - Requires flatpak >= 0.99.1 */
         "--socket=ssh-auth",
         /* File transfer (although limited to user directory) */
         "--filesystem=home",
@@ -106,6 +108,7 @@
             ],
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
+                "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
                 "-DWITH_CLIENT:BOOL=OFF",
                 "-DWITH_CUPS:BOOL=ON",
                 "-DWITH_JPEG:BOOL=ON",
@@ -387,8 +390,14 @@
         {
             "name": "remmina",
             "buildsystem": "cmake-ninja",
+            "cleanup": [
+                "/bin/remmina-gnome",
+                "/bin/gnome-session-remmina",
+                "/share/applications/remmina-gnome.desktop"
+            ],
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
+                "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
                 "-DWITH_MANPAGES:BOOL=OFF",
                 "-DWITH_TELEPATHY:BOOL=OFF"
             ],
