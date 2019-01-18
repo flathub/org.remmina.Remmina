@@ -128,7 +128,7 @@
             "modules": [
                 {
                     /**
-                     * libfreerdp use xprop to try to detect keyboard layout
+                     * libfreerdp uses xprop to try to detect keyboard layout
                      */
                     "name": "xprop",
                     "sources": [
