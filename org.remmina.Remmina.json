@@ -451,6 +451,7 @@
             ]
         },
         {
+            /* Remmina main build */
             "name": "remmina",
             "buildsystem": "cmake-ninja",
             "cleanup": [
