@@ -148,8 +148,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.0.0-rc4",
-                    "commit": "e21b72c95f857817b4b32b5ef5406355c005a9e8"
+                    "branch": "master"
                 }
             ],
             "modules": [
