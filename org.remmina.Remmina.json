@@ -438,8 +438,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v1.3.8",
-                    "commit": "389a2f355a55a4cd3a2a5aed74e0bc3feac7eaaa"
+                    "tag": "v1.3.9",
+                    "commit": "0606fee3f396e28d18dedf202fedcb064ce27ee6"
                 }
             ]
         }
