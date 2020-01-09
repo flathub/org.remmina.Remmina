@@ -41,10 +41,7 @@
         /* Query GNOME Shell version (to display systray icon if supported) */
         "--talk-name=org.gnome.Shell",
         /* Local network host discovery */
-        "--system-talk-name=org.freedesktop.Avahi",
-        /* Needed for dconf to work */
-        "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+        "--system-talk-name=org.freedesktop.Avahi"
     ],
     "modules": [
         "shared-modules/dbus-glib/dbus-glib-0.110.json",
