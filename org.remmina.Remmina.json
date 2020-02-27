@@ -19,7 +19,8 @@
     ],
     "finish-args": [
         /* X11 + XShm access */
-        "--share=ipc", "--socket=x11",
+        "--share=ipc",
+        "--socket=x11",
         /* Needs to talk to the network */
         "--share=network",
         /* Play sounds redirected from guests */
@@ -85,7 +86,7 @@
         {
             "name": "nxproxy",
             "no-autogen": true,
-            "make-args": ["build-lite", "PREFIX=${FLATPAK_DEST}"],
+            "make-args": [ "build-lite", "PREFIX=${FLATPAK_DEST}" ],
             "install-rule": "install-lite",
             "sources": [
                 {
@@ -161,6 +162,22 @@
                             "sha256": "8c77fb096e46c60032b7e2bde9492c3ffcc18734f50b395085a5f10bfd3cf753"
                         }
                     ]
+                },
+                {
+                    /**
+                     * libusb-1.0 has been forced as a dependency for FreeRDP
+                     */
+                    "name": "libusb",
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://github.com/libusb/libusb/releases/download/v1.0.23/libusb-1.0.23.tar.bz2",
+                            "sha256": "db11c06e958a82dac52cf3c65cb4dd2c3f339c8a988665110e0d24d19312ad8d"
+                        }
+                    ],
+                    "config-opts": [
+                        "--disable-udev"
+                    ]
                 }
             ]
         },
@@ -203,8 +220,8 @@
                     "name": "lz4",
                     "subdir": "lib",
                     "no-autogen": true,
-                    "make-args": ["lib"],
-                    "make-install-args": ["PREFIX=${FLATPAK_DEST}"],
+                    "make-args": [ "lib" ],
+                    "make-install-args": [ "PREFIX=${FLATPAK_DEST}" ],
                     "sources": [
                         {
                             "type": "archive",
@@ -316,26 +333,6 @@
             ]
         },
         {
-            /**
-             * Telepathy plugin would require the following files to be exported
-             * outside of flatpak:
-             *   - ${XDG_DATA_DIR}//telepathy//clients//Remmina.client
-             *   - ${XDG_DATA_DIR}//dbus-1//services//org.freedesktop.Telepathy.Client.Remmina.service
-             */
-            "name": "telepathy-glib",
-            "disabled": true,
-            "config-opts": [
-                "--disable-introspection"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://telepathy.freedesktop.org/releases/telepathy-glib/telepathy-glib-0.24.1.tar.gz",
-                    "sha256": "9e0df1d8f857e0270cf0b32e2d1ca5a24aa7282873361785d573f72ad7f7d5eb"
-                }
-            ]
-        },
-        {
             "name": "libvncserver",
             "buildsystem": "cmake-ninja",
             "builddir": true,
@@ -428,8 +425,7 @@
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
                 "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
-                "-DWITH_MANPAGES:BOOL=OFF",
-                "-DWITH_TELEPATHY:BOOL=OFF"
+                "-DWITH_MANPAGES:BOOL=OFF"
             ],
             "sources": [
                 {
