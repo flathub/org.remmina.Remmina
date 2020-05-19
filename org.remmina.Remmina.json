@@ -18,31 +18,19 @@
         "/share/xsessions"
     ],
     "finish-args": [
-        /* X11 + XShm access */
         "--share=ipc",
         "--socket=fallback-x11",
         "--socket=x11",
-        /* Needs to talk to the network */
         "--share=network",
-        /* Play sounds redirected from guests */
         "--socket=pulseaudio",
-        /* Wayland access */
         "--socket=wayland",
-        /* Smartcard access - Requires flatpak >= 1.3.2 (April 2019) */
         "--socket=pcsc",
-        /* SSH_AUTH_SOCK access - Requires flatpak >= 0.99.1 */
         "--socket=ssh-auth",
-        /* File transfer (although limited to user directory) */
         "--filesystem=home",
-        /* Desktop notifications */
         "--talk-name=org.freedesktop.Notifications",
-        /* Needed to save login credentials */
         "--talk-name=org.freedesktop.secrets",
-        /* Appindicator */
         "--talk-name=org.kde.StatusNotifierWatcher",
-        /* Query GNOME Shell version (to display systray icon if supported) */
         "--talk-name=org.gnome.Shell",
-        /* Local network host discovery */
         "--system-talk-name=org.freedesktop.Avahi"
     ],
     "modules": [
@@ -163,8 +151,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.0.0",
-                    "commit": "5ab2bed8749747b8e4b2ed431fd102bc726be684"
+                    "tag": "2.1.0",
+                    "commit": "2d5ce618bf1db4bae83fd17fbb7e4eccbd715d9c"
                 }
             ],
             "modules": [
