@@ -439,6 +439,10 @@
                     "url": "https://gitlab.com/Remmina/Remmina.git",
                     "tag": "v1.4.5",
                     "commit": "292a168d8f9f6c73dbaee41c0711884f26c28b46"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/0005-Upstream-release-v1.4.5.patch"
                 }
             ]
         }
