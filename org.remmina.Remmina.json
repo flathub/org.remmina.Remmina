@@ -439,7 +439,7 @@
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
                     "tag": "v1.4.6",
-                    "commit": "37c55ac80ff8c7fd41acdc670ed5196db55be7cf"
+                    "commit": "560ba3108240d77d09d0f27b81e922d36f2c952b"
                 },
                 {
                     "type": "patch",
