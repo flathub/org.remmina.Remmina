@@ -27,6 +27,7 @@
         "--socket=pcsc",
         "--socket=ssh-auth",
         "--filesystem=home",
+        "--device=all",
         "--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.freedesktop.secrets",
         "--talk-name=org.kde.StatusNotifierWatcher",
@@ -437,8 +438,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v1.4.5",
-                    "commit": "292a168d8f9f6c73dbaee41c0711884f26c28b46"
+                    "tag": "v1.4.6",
+                    "commit": "37c55ac80ff8c7fd41acdc670ed5196db55be7cf"
                 },
                 {
                     "type": "patch",
