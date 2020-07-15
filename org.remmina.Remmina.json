@@ -158,6 +158,10 @@
                 {
                     "type": "patch",
                     "path": "patches/0003-Fixed-6298-Mask-CACHED_BRUSH-when-checking-brush-sty.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/0001-Fix-seeking-in-Cache-Brush-and-other-Secondary-Drawi.patch"
                 }
             ],
             "modules": [
