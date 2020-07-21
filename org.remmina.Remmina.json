@@ -152,16 +152,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.1.2",
-                    "commit": "584efae073386e8c5f6bc265b05c87d508a9bcbc"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/0003-Fixed-6298-Mask-CACHED_BRUSH-when-checking-brush-sty.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/0001-Fix-seeking-in-Cache-Brush-and-other-Secondary-Drawi.patch"
+                    "tag": "2.2.0",
+                    "commit": "d2ba84a6885f57674098fe8e76c5f99d880e580d"
                 }
             ],
             "modules": [
