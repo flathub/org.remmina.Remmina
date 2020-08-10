@@ -33,7 +33,15 @@
         "--talk-name=org.kde.StatusNotifierWatcher",
         "--talk-name=org.gnome.Shell",
         "--system-talk-name=org.freedesktop.Avahi"
+        "--filesystem=xdg-download"
     ],
+    "add-build-extensions": {
+      "org.freedesktop.Platform.ffmpeg-full": {
+        "directory": "lib/ffmpeg",
+        "version": "19.08",
+        "add-ld-path": "."
+      }
+    },
     "modules": [
         "shared-modules/dbus-glib/dbus-glib-0.110.json",
         "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
