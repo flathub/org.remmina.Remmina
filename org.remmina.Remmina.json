@@ -152,6 +152,7 @@
                 "-DWITH_PULSE:BOOL=ON",
                 "-DWITH_GSTREAMER:BOOL=OFF",
                 "-DWITH_FFMPEG:BOOL=ON",
+                "-DWITH_DSP_FFMPEG:BOOL=ON",
                 "-DWITH_CHANNELS:BOOL=ON",
                 "-DBUILTIN_CHANNELS:BOOL=ON",
                 "-DWITH_CUPS:BOOL=ON",
@@ -428,6 +429,7 @@
             ],
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
+                "-DWITH_NEWS:BOOL=ON",
                 "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
                 "-DWITH_FREERDP3:BOOL=OFF",
                 "-DWITH_MANPAGES:BOOL=OFF"
