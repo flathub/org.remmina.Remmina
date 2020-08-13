@@ -114,26 +114,22 @@
             /**
              * For smartcard support
              */
-            "name": "pcsc-lite",
-            "cleanup": [
-                "/bin",
-                "/sbin",
-                "/lib/libpcscspy.so*",
-                "/share/doc"
-            ],
-            "config-opts": [
-                "--disable-libsystemd",
-                "--disable-serial",
-                "--disable-usb",
-                "--with-systemdsystemunitdir=no"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://pcsclite.apdu.fr/files/pcsc-lite-1.8.25.tar.bz2",
-                    "sha256": "d76d79edc31cf76e782b9f697420d3defbcc91778c3c650658086a1b748e8792"
-                }
-            ]
+             "name": "pcsc",
+             "config-opts": [
+                 "--disable-libsystemd",
+                 "--enable-pic",
+                 "--disable-libusb",
+                 "--enable-shared",
+                 "--with-systemdsystemunitdir=/app/lib/systemd/"
+             ],
+             "sources": [
+                 {
+                     "type": "git",
+                     "url": "https://github.com/LudovicRousseau/PCSC.git",
+                     "tag": "pcsc-1.9.0",
+                     "commit": "e796a0f12fbefa459bff0d25e27089615fa91f21"
+                 }
+             ]
         },
         {
             "name": "freerdp",
@@ -146,19 +142,19 @@
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
                 "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
-                "-DWITH_WAYLAND:BOOL=ON",
-                "-DWITH_CLIENT:BOOL=OFF",
-                "-DWITH_SERVER:BOOL=OFF",
-                "-DWITH_PULSE:BOOL=ON",
-                "-DWITH_GSTREAMER:BOOL=OFF",
+                "-DCHANNEL_TSMF:BOOL=ON",
+                "-DCHANNEL_URBDRC:BOOL=ON",
+                "-DBUILD_TESTING:BOOL=OFF",
+                "-DWITH_MANPAGES:BOOL=OFF",
+                "-DWITH_GSSAPI:BOOL=OFF",
+                "-DWITH_PCSC:BOOL=ON",
+                "-DWITH_SERVER:BOOL=ON",
+                "-DWITH_SAMPLE:BOOL=ON",
+                "-DWITH_CUPS:BOOL=ON",
                 "-DWITH_FFMPEG:BOOL=ON",
                 "-DWITH_DSP_FFMPEG:BOOL=ON",
-                "-DWITH_CHANNELS:BOOL=ON",
-                "-DBUILTIN_CHANNELS:BOOL=ON",
-                "-DWITH_CUPS:BOOL=ON",
-                "-DWITH_PCSC:BOOL=ON",
-                "-DWITH_JPEG:BOOL=ON",
-                "-DWITH_LIBSYSTEMD:BOOL=OFF"
+                "-DWITH_OSS:BOOL=OFF",
+                "-DWITH_PULSE:BOOL=ON"
             ],
             "sources": [
                 {
