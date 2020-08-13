@@ -142,19 +142,24 @@
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
                 "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
+                "-DWITH_WAYLAND:BOOL=ON",
                 "-DCHANNEL_TSMF:BOOL=ON",
                 "-DCHANNEL_URBDRC:BOOL=ON",
                 "-DBUILD_TESTING:BOOL=OFF",
                 "-DWITH_MANPAGES:BOOL=OFF",
                 "-DWITH_GSSAPI:BOOL=OFF",
                 "-DWITH_PCSC:BOOL=ON",
-                "-DWITH_SERVER:BOOL=ON",
-                "-DWITH_SAMPLE:BOOL=ON",
+                "-DWITH_SERVER:BOOL=OFF",
+                "-DWITH_CLIENT:BOOL=OFF",
                 "-DWITH_CUPS:BOOL=ON",
                 "-DWITH_FFMPEG:BOOL=ON",
                 "-DWITH_DSP_FFMPEG:BOOL=ON",
                 "-DWITH_OSS:BOOL=OFF",
-                "-DWITH_PULSE:BOOL=ON"
+                "-DWITH_PULSE:BOOL=ON",
+                "-DWITH_CHANNELS:BOOL=ON",
+                "-DBUILTIN_CHANNELS:BOOL=ON",
+                "-DWITH_JPEG:BOOL=ON",
+                "-DWITH_LIBSYSTEMD:BOOL=OFF"
             ],
             "sources": [
                 {
