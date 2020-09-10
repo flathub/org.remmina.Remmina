@@ -302,8 +302,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.libssh.org/files/0.9/libssh-0.9.4.tar.xz",
-                    "sha256": "150897a569852ac05aac831dc417a7ba8e610c86ca2e0154a99c6ade2486226b"
+                    "url": "https://www.libssh.org/files/0.9/libssh-0.9.5.tar.xz",
+                    "sha256": "acffef2da98e761fc1fd9c4fddde0f3af60ab44c4f5af05cd1b2d60a3fa08718"
                 }
             ],
             "modules": [
@@ -355,8 +355,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.12.tar.gz",
-                    "sha256": "33cbbb4e15bb390f723c311b323cef4a43bcf781984f92d92adda3243a116136"
+                    "url": "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.13.tar.gz",
+                    "sha256": "0ae5bb9175dc0a602fe85c1cf591ac47ee5247b87f2bf164c16b05f87cbfa81a"
                 }
             ]
         },
