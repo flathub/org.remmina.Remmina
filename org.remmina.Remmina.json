@@ -1,7 +1,7 @@
 {
     "app-id": "org.remmina.Remmina",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.36",
+    "runtime-version": "3.38",
     "sdk": "org.gnome.Sdk",
     "command": "remmina",
     "cleanup": [
@@ -39,13 +39,18 @@
         "--system-talk-name=org.freedesktop.Avahi",
         "--filesystem=xdg-download"
     ],
-    "add-build-extensions": {
-      "org.freedesktop.Platform.ffmpeg-full": {
-        "directory": "lib/ffmpeg",
-        "version": "19.08",
-        "add-ld-path": "."
-      }
+    "add-extensions": {
+        "org.freedesktop.Platform.ffmpeg-full": {
+            "directory": "lib/ffmpeg",
+            "version": "20.08",
+            "add-ld-path": ".",
+            "no-autodownload": true,
+            "autodelete": false
+        }
     },
+    "cleanup-commands": [
+        "mkdir -p /app/lib/ffmpeg"
+    ],
     "modules": [
         "shared-modules/dbus-glib/dbus-glib-0.110.json",
         "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
@@ -116,24 +121,24 @@
         },
         {
             /**
-             * For smartcard support
-             */
-             "name": "pcsc",
-             "config-opts": [
-                 "--disable-libsystemd",
-                 "--enable-pic",
-                 "--disable-libusb",
-                 "--enable-shared",
-                 "--with-systemdsystemunitdir=/app/lib/systemd/"
-             ],
-             "sources": [
-                 {
-                     "type": "git",
-                     "url": "https://github.com/LudovicRousseau/PCSC.git",
-                     "tag": "pcsc-1.9.0",
-                     "commit": "e796a0f12fbefa459bff0d25e27089615fa91f21"
-                 }
-             ]
+            * For smartcard support
+            */
+            "name": "pcsc",
+            "config-opts": [
+                "--disable-libsystemd",
+                "--enable-pic",
+                "--disable-libusb",
+                "--enable-shared",
+                "--with-systemdsystemunitdir=/app/lib/systemd/"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/LudovicRousseau/PCSC.git",
+                    "tag": "pcsc-1.9.0",
+                    "commit": "e796a0f12fbefa459bff0d25e27089615fa91f21"
+                }
+            ]
         },
         {
             "name": "freerdp",
@@ -175,8 +180,8 @@
             "modules": [
                 {
                     /**
-                     * libfreerdp uses xprop to try to detect keyboard layout
-                     */
+                    * libfreerdp uses xprop to try to detect keyboard layout
+                    */
                     "name": "xprop",
                     "sources": [
                         {
@@ -211,8 +216,8 @@
             "modules": [
                 {
                     /**
-                     * For smartcard support
-                     */
+                    * For smartcard support
+                    */
                     "name": "libcacard",
                     "config-opts": [
                         "--enable-pcsc"
@@ -241,8 +246,8 @@
                 },
                 {
                     /**
-                     * For webdav (shared folder) support
-                     */
+                    * For webdav (shared folder) support
+                    */
                     "name": "phodav",
                     "buildsystem": "meson",
                     "cleanup": [
@@ -362,11 +367,11 @@
         },
         {
             /**
-             * Xephyr version 1.17.0 and later don't work fine with GtkSocket,
-             * therefore we remain at version 1.16.4:
-             *   - https://gitlab.com//Remmina//Remmina//issues//366
-             *   - https://bugs.freedesktop.org//show_bug.cgi?id=91700
-             */
+            * Xephyr version 1.17.0 and later don't work fine with GtkSocket,
+            * therefore we remain at version 1.16.4:
+            *   - https://gitlab.com//Remmina//Remmina//issues//366
+            *   - https://bugs.freedesktop.org//show_bug.cgi?id=91700
+            */
             "name": "xephyr",
             "config-opts": [
                 "--enable-kdrive",
