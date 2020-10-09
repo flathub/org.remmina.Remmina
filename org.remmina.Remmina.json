@@ -44,7 +44,7 @@
             "directory": "lib/ffmpeg",
             "version": "20.08",
             "add-ld-path": ".",
-            "no-autodownload": true,
+            "no-autodownload": false,
             "autodelete": false
         }
     },
