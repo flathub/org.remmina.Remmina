@@ -284,8 +284,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.libsodium.org/libsodium/releases/libsodium-1.0.18.tar.gz",
-                    "sha256": "6f504490b342a4f8a4c4a02fc9b866cbef8622d5df4e5452b46be121e46636c1"
+                    "url": "https://download.libsodium.org/libsodium/releases/libsodium-1.0.18-stable.tar.gz",
+                    "sha256": "ef15423c0d82c9f1f371bc17723bef00060b51aecb7a1470cc03d01d2d0a0378"
                 }
             ],
             "post-install": [
