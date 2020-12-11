@@ -284,7 +284,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.libsodium.org/libsodium/releases/libsodium-1.0.18-stable.tar.gz",
+                    /* FIXME: See https://discourse.flathub.org/t/gnutls-handshake-failed-error-in-protocol-version-downloading-archives/957 
+                    "url": "https://download.libsodium.org/libsodium/releases/libsodium-1.0.18-stable.tar.gz", */
+                    "url": "https://remmina.org/public/packages/libsodium-1.0.18-stable.tar.gz",
                     "sha256": "ef15423c0d82c9f1f371bc17723bef00060b51aecb7a1470cc03d01d2d0a0378"
                 }
             ],
