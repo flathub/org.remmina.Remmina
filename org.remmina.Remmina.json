@@ -284,15 +284,17 @@
         },
         {
             "name": "libsodium",
+            "buildsystem": "autotools",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://remmina.org/public/packages/libsodium-1.0.18-stable.tar.gz",
-                    "sha256": "ef15423c0d82c9f1f371bc17723bef00060b51aecb7a1470cc03d01d2d0a0378"
+					"type": "git",
+					"url": "https://github.com/jedisct1/libsodium.git",
+					"branch": "stable",
+					"commit": "a08a945c589462f524efddbc8d62427bb002bb6a"
                 }
             ],
             "post-install": [
-                "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/libsodium LICENSE"
+                "install -Dm644 LICENSE ${FLATPAK_DEST}/share/licenses/libsodium/LICENSE"
             ]
         },
         {
