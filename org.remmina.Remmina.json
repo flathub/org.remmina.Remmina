@@ -286,13 +286,14 @@
             "name": "libsodium",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://remmina.org/public/packages/libsodium-1.0.18-stable.tar.gz",
-                    "sha256": "ef15423c0d82c9f1f371bc17723bef00060b51aecb7a1470cc03d01d2d0a0378"
+					"type": "git",
+					"url": "https://github.com/jedisct1/libsodium.git",
+					"branch": "stable",
+					"commit": "a08a945c589462f524efddbc8d62427bb002bb6a"
                 }
             ],
             "post-install": [
-                "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/libsodium LICENSE"
+                "install -Dm644 LICENSE ${FLATPAK_DEST}/share/licenses/libsodium/LICENSE"
             ]
         },
         {
@@ -310,8 +311,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/jedisct1/libsodium/archive/1.0.18.tar.gz",
-                    "sha256": "6f504490b342a4f8a4c4a02fc9b866cbef8622d5df4e5452b46be121e46636c1"
+                    "url": "https://www.libssh.org/files/0.9/libssh-0.9.5.tar.xz",
+                    "sha256": "acffef2da98e761fc1fd9c4fddde0f3af60ab44c4f5af05cd1b2d60a3fa08718"
                 }
             ],
             "modules": [
@@ -450,8 +451,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v1.4.10",
-                    "commit": "9d1dbdf2d648644e0de9590c6291d7e7b72a1473"
+                    "tag": "v1.4.11",
+                    "commit": "3f3b527f141bb4f1361157759251edfe5bfe2bfb"
                 }
             ]
         }
