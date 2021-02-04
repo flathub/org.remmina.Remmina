@@ -26,7 +26,7 @@
         "--socket=wayland",
         "--socket=pcsc",
         "--socket=ssh-auth",
-        "--filesystem=host",
+        "--filesystem=home",
         "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
         "--device=all",
         "--talk-name=ca.desrt.dconf",
