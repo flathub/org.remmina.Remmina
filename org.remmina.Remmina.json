@@ -212,8 +212,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.spice-space.org/download/gtk/spice-gtk-0.39.tar.xz",
-                    "sha256": "23acbee197eaaec9bce6e6bfd885bd8f79708332639243ff04833020865713cd"
+                    "url": "https://www.spice-space.org/download/gtk/spice-gtk-0.38.tar.xz",
+                    "sha256": "5ae974731baf2b41316d4f0b3ae0c2e47f00bff91a5a617e189cd3dedcd96d8e"
                 }
             ],
             "modules": [
@@ -228,8 +228,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.spice-space.org/download/libcacard/libcacard-2.8.0.tar.xz",
-                            "sha256": "8005b93c3139ff739057efb19f9dac1d0993ffb0b913111505af6a91711ef22b"
+                            "url": "https://www.spice-space.org/download/libcacard/libcacard-2.7.0.tar.xz",
+                            "sha256": "551d4be4a07667cf0543f3c895beb6da8a93ef5a9829f2ae47817be5e616a114"
                         }
                     ]
                 },
@@ -275,8 +275,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.spice-space.org/download/releases/spice-protocol/spice-protocol-0.14.0.tar.bz2",
-                            "sha256": "b6a4aa1ca32668790b45a494bbd000e9d05797b391d5a5d4b91adf1118216eac"
+                            "url": "https://www.spice-space.org/download/releases/spice-protocol-0.14.2.tar.xz",
+                            "sha256": "8f3a63c8b68300dffe36f2e75eac57afa1e76d5d80af760fd138a0b3f44cf1e9"
                         }
                     ]
                 }
