@@ -220,6 +220,20 @@
             ],
             "modules": [
                 {
+                    "name" : "python-pyparsing",
+                    "buildsystem" : "simple",
+                    "build-commands" : [
+                        "pip3 install --prefix=/app pyparsing-2.4.6-py2.py3-none-any.whl"
+                    ],
+                    "sources" : [
+                        {
+                            "type" : "file",
+                            "url" : "https://files.pythonhosted.org/packages/5d/bc/1e58593167fade7b544bfe9502a26dc860940a79ab306e651e7f13be68c2/pyparsing-2.4.6-py2.py3-none-any.whl",
+                            "sha256" : "c342dccb5250c08d45fd6f8b4a559613ca603b57498511740e65cd11a2e7dcec"
+                        }
+                    ]
+                },
+                {
                     /**
                     * For smartcard support
                     */
@@ -288,10 +302,10 @@
             "name": "libsodium",
             "sources": [
                 {
-					"type": "git",
-					"url": "https://github.com/jedisct1/libsodium.git",
-					"branch": "stable",
-					"commit": "c9608ed004f6dda62c43be9d5a8fffdf6eb978c7"
+                    "type": "git",
+                    "url": "https://github.com/jedisct1/libsodium.git",
+                    "branch": "stable",
+                    "commit": "c9608ed004f6dda62c43be9d5a8fffdf6eb978c7"
                 }
             ],
             "post-install": [
