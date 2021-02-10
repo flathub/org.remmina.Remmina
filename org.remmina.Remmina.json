@@ -200,14 +200,16 @@
         },
         {
             "name": "spice-gtk",
-            "cleanup": [
-                "/bin",
-                "/share/vala"
-            ],
+            "buildsystem": "meson",
+            "build-options" : {
+                "env" : {
+                    "PYTHONPATH" : "/app"
+                }
+            },
             "config-opts": [
-                "PYTHON=python3",
-                "--disable-introspection",
-                "--disable-vala"
+                "-Dvapi=enabled",
+                "-Dwebdav=enabled",
+                "-Dgtk_doc=disabled"
             ],
             "sources": [
                 {
