@@ -176,8 +176,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.2.0",
-                    "commit": "d2ba84a6885f57674098fe8e76c5f99d880e580d"
+                    "tag": "2.3.1",
+                    "commit": "136a58fbd0c3c2421a4e02d6422119406f1c32c2"
                 }
             ],
             "modules": [
@@ -467,8 +467,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v1.4.11",
-                    "commit": "3f3b527f141bb4f1361157759251edfe5bfe2bfb"
+                    "tag": "v1.4.12",
+                    "commit": "7cde08bba4ad9ffdb069f622d960a1845a5e1361"
                 }
             ]
         }
