@@ -305,7 +305,7 @@
                     "type": "git",
                     "url": "https://github.com/jedisct1/libsodium.git",
                     "branch": "stable",
-                    "commit": "d99f7745b612ae356d3312b57e3ea22d98398b12"
+                    "commit": "d3f4804f4d4e6b5b4610fe377f6ff24e4368ae09"
                 }
             ],
             "post-install": [
@@ -467,8 +467,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v1.4.12",
-                    "commit": "97312f67d1e782a709740e79d355348055a272ec"
+                    "tag": "v1.4.13",
+                    "commit": "bd1be9d309b420234961b6dd5d2c6364f4a08e49"
                 }
             ]
         }
