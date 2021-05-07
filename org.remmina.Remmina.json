@@ -60,16 +60,16 @@
         {
             "name": "vte",
             "buildsystem" : "meson",
-            "build-options" : {
-                "env" : {
-                    "CXXFLAGS" : "-fno-exceptions"
-                }
-            },
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/vte/0.60/vte-0.60.0.tar.xz",
-                    "sha256" : "72d1955eb40b4475b858892813a79545cee34409bac2af470606fb4b4d193a1b"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/vte.git",
+                    "tag": "0.64.1",
+                    "commit": "109a6cf6e05ef55b79f768a30fdf95723ebba0d3",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^([\\d.]+)$"
+                    }
                 }
             ]
         },
@@ -87,7 +87,10 @@
                 "--disable-introspection",
                 "--disable-qt3",
                 "--disable-qt4",
+                "--disable-qt5",
                 "--disable-gtk",
+                "--disable-core-docs",
+                "--disable-manpages",
                 "--disable-libdaemon",
                 "--disable-python",
                 "--disable-pygobject",
@@ -104,9 +107,31 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.avahi.org/download/avahi-0.7.tar.gz",
-                    "sha256": "57a99b5dfe7fdae794e3d1ee7a62973a368e91e414bd0dfa5d84434de5b14804"
+                    "url": "https://www.avahi.org/download/avahi-0.8.tar.gz",
+                    "sha256": "060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": "147",
+                        "url-template": "https://www.avahi.org/download/avahi-$version.tar.gz"
+                    }
                 }
+            ],
+            "modules": [
+		{
+		  "name": "libevent",
+		  "sources": [
+		    {
+		      "type": "archive",
+		      "url": "https://github.com/libevent/libevent/releases/download/release-2.1.12-stable//libevent-2.1.12-stable.tar.gz",
+		      "sha256": "92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb",
+		      "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": "1606",
+                        "url-template": "https://github.com/libevent/libevent/releases/download/release-$version-stable//libevent-$version-stable.tar.gz"
+                      }
+		    }
+		  ]
+		}
             ]
         },
         {
@@ -116,9 +141,14 @@
             "install-rule": "install-lite",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/ArcticaProject/nx-libs/archive/3.5.99.22/nx-libs-3.5.99.22.tar.gz",
-                    "sha256": "fa672a7b1cfeca4183a2f9b814f876889ee73a9d49d7ae64e36671dd3562bd5b"
+                    "type": "git",
+                    "url": "https://github.com/ArcticaProject/nx-libs.git",
+                    "tag": "3.5.99.26",
+                    "commit": "0e2b7971343845248353f6d8503e28506e9536ea",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^([\\d.]+)$"
+                    }
                 }
             ]
         },
@@ -139,7 +169,11 @@
                     "type": "git",
                     "url": "https://github.com/LudovicRousseau/PCSC.git",
                     "tag": "pcsc-1.9.0",
-                    "commit": "e796a0f12fbefa459bff0d25e27089615fa91f21"
+                    "commit": "e796a0f12fbefa459bff0d25e27089615fa91f21",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^pcsc-([\\d.]+)$"
+                    }
                 }
             ]
         },
@@ -176,8 +210,12 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.3.1",
-                    "commit": "136a58fbd0c3c2421a4e02d6422119406f1c32c2"
+                    "tag": "2.3.2",
+                    "commit": "c3df0be63953ed98525d9b736ba878ad733de059",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^([\\d.]+)$"
+                    }
                 }
             ],
             "modules": [
@@ -189,8 +227,13 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://xorg.freedesktop.org/releases/individual/app/xprop-1.2.4.tar.bz2",
-                            "sha256": "8c77fb096e46c60032b7e2bde9492c3ffcc18734f50b395085a5f10bfd3cf753"
+                            "url": "https://xorg.freedesktop.org/archive/individual/app/xprop-1.2.5.tar.bz2",
+                            "sha256": "9b92ed0316bf2486121d8bac88bd1878f16b43bd335f18009b1f941f1eca93a1",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": "14958",
+                                "url-template": "https://xorg.freedesktop.org/archive/individual/app/xprop-$version.tar.bz2"
+                            }
                         }
                     ]
                 },
@@ -214,8 +257,13 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.spice-space.org/download/gtk/spice-gtk-0.38.tar.xz",
-                    "sha256": "5ae974731baf2b41316d4f0b3ae0c2e47f00bff91a5a617e189cd3dedcd96d8e"
+                    "url": "https://www.spice-space.org/download/gtk/spice-gtk-0.39.tar.xz",
+                    "sha256": "23acbee197eaaec9bce6e6bfd885bd8f79708332639243ff04833020865713cd",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": "11576",
+                        "url-template": "https://www.spice-space.org/download/gtk/spice-gtk-$version.tar.xz"
+                    }
                 }
             ],
             "modules": [
@@ -223,13 +271,17 @@
                     "name" : "python-pyparsing",
                     "buildsystem" : "simple",
                     "build-commands" : [
-                        "pip3 install --prefix=/app pyparsing-2.4.6-py2.py3-none-any.whl"
+                        "pip3 install --no-deps --no-build-isolation --verbose --prefix=${FLATPAK_DEST} ."
                     ],
                     "sources" : [
                         {
-                            "type" : "file",
-                            "url" : "https://files.pythonhosted.org/packages/5d/bc/1e58593167fade7b544bfe9502a26dc860940a79ab306e651e7f13be68c2/pyparsing-2.4.6-py2.py3-none-any.whl",
-                            "sha256" : "c342dccb5250c08d45fd6f8b4a559613ca603b57498511740e65cd11a2e7dcec"
+                            "type" : "archive",
+                            "url" : "https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz",
+                            "sha256" : "c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1",
+                            "x-checker-data": {
+                                "type": "pypi",
+                                "name": "pyparsing"
+                            }
                         }
                     ]
                 },
@@ -238,14 +290,21 @@
                     * For smartcard support
                     */
                     "name": "libcacard",
+                    "buildsystem": "meson",
                     "config-opts": [
-                        "--enable-pcsc"
+                        "-Dpcsc=enabled",
+                        "-Ddisable_tests=true"
                     ],
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.spice-space.org/download/libcacard/libcacard-2.7.0.tar.xz",
-                            "sha256": "16b1a0847d5f9d2290e0785eca40f2e49d1ed80814bfc758c05c76b3c89cdb6f"
+                            "url": "https://www.spice-space.org/download/libcacard/libcacard-2.8.0.tar.xz",
+                            "sha256": "8005b93c3139ff739057efb19f9dac1d0993ffb0b913111505af6a91711ef22b",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": "18776",
+                                "url-template": "https://www.spice-space.org/download/libcacard/libcacard-$version.tar.xz"
+                            }
                         }
                     ]
                 },
@@ -258,8 +317,13 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/lz4/lz4/archive/v1.9.2/lz4-1.9.2.tar.gz",
-                            "sha256": "658ba6191fa44c92280d4aa2c271b0f4fbc0e34d249578dd05e50e76d0e5efcc"
+                            "url": "https://github.com/lz4/lz4/archive/v1.9.3/lz4-1.9.3.tar.gz",
+                            "sha256": "030644df4611007ff7dc962d981f390361e6c97a34e5cbc393ddfbe019ffe2c1",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": "1865",
+                                "url-template": "https://github.com/lz4/lz4/archive/v$version/lz4-$version.tar.gz"
+                            }
                         }
                     ]
                 },
@@ -280,8 +344,13 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "http://download.gnome.org/sources/phodav/2.3/phodav-2.3.tar.xz",
-                            "sha256": "6ef61e624c30a42fb720ef7ade7447e9ba922d69024b0326dc072fa3362ebe59"
+                            "url": "http://download.gnome.org/sources/phodav/2.5/phodav-2.5.tar.xz",
+                            "sha256": "71f0a9cd70afd4dd1412a0298331dbb8ac71c0377f52117afc15eb88dc6fb910",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": "9670",
+                                "url-template": "http://download.gnome.org/sources/phodav/$version/phodav-$version.tar.xz"
+                            }
                         }
                     ]
                 },
@@ -291,8 +360,13 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.spice-space.org/download/releases/spice-protocol-0.14.2.tar.xz",
-                            "sha256": "8f3a63c8b68300dffe36f2e75eac57afa1e76d5d80af760fd138a0b3f44cf1e9"
+                            "url": "https://www.spice-space.org/download/releases/spice-protocol-0.14.3.tar.xz",
+                            "sha256": "f986e5bc2a1598532c4897f889afb0df9257ac21c160c083703ae7c8de99487a",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": "14892",
+                                "url-template": "https://www.spice-space.org/download/releases/spice-protocol-$version.tar.xz"
+                            }
                         }
                     ]
                 }
@@ -305,7 +379,7 @@
                     "type": "git",
                     "url": "https://github.com/jedisct1/libsodium.git",
                     "branch": "stable",
-                    "commit": "d3f4804f4d4e6b5b4610fe377f6ff24e4368ae09"
+                    "commit": "8aedf4733884a25434b5c17c79c7e7dee27e6eb0"
                 }
             ],
             "post-install": [
@@ -316,53 +390,22 @@
             "name": "libssh",
             "buildsystem": "cmake-ninja",
             "builddir": true,
-            /* FIXME: use ${FLATPAK_DEST} instead of hardcoded //app for nacl flags */
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
                 "-DWITH_NACL:BOOL=ON",
                 "-DNACL_INCLUDE_DIR:PATH=/app/include/",
-                "-DNACL_LIBRARY:PATH=/app/lib/nacl/libnacl.a",
                 "-DWITH_EXAMPLES:BOOL=OFF"
             ],
             "sources": [
                 {
                     "type": "archive",
                     "url": "https://www.libssh.org/files/0.9/libssh-0.9.5.tar.xz",
-                    "sha256": "acffef2da98e761fc1fd9c4fddde0f3af60ab44c4f5af05cd1b2d60a3fa08718"
-                }
-            ],
-            "modules": [
-                {
-                    "name": "nacl",
-                    "buildsystem": "simple",
-                    "build-commands": [
-                        /* Patch build system */
-                        "echo ${CC:-gcc} ${CPPFLAGS} ${CFLAGS} -fPIC >okcompilers/c",
-                        "echo ${CXX:-g++} ${CPPFLAGS} ${CXXFLAGS} -fPIC >okcompilers/cpp",
-                        "sed -e '/shorthostname=/ s/.*/shorthostname=flatpak-builder/g' -i ./do",
-                        /* Build */
-                        "./do",
-                        "cat ./build/flatpak-builder/log",
-                        /* Install */
-                        "mkdir -v -p /app/lib/nacl",
-                        "install -v -m644 -t /app/lib/nacl/ ./build/flatpak-builder/lib/*/*.a",
-                        "mkdir -v -p /app/include/nacl",
-                        "install -v -m644 -t /app/include/nacl/ ./build/flatpak-builder/include/*/*.h"
-                    ],
-                    "cleanup": [
-                        "/lib/nacl"
-                    ],
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://hyperelliptic.org/nacl/nacl-20110221.tar.bz2",
-                            "sha256": "4f277f89735c8b0b8a6bbd043b3efb3fa1cc68a9a5da6a076507d067fc3b3bf8"
-                        },
-                        {
-                            "type": "patch",
-                            "path": "patches/nacl-20110221-cpufreq-fallback.patch"
-                        }
-                    ]
+                    "sha256": "acffef2da98e761fc1fd9c4fddde0f3af60ab44c4f5af05cd1b2d60a3fa08718",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": "1729",
+                        "url-template": "https://www.libssh.org/files/0.9/libssh-$version.tar.xz"
+                    }
                 }
             ]
         },
@@ -381,7 +424,12 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.13.tar.gz",
-                    "sha256": "0ae5bb9175dc0a602fe85c1cf591ac47ee5247b87f2bf164c16b05f87cbfa81a"
+                    "sha256": "0ae5bb9175dc0a602fe85c1cf591ac47ee5247b87f2bf164c16b05f87cbfa81a",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": "1756",
+                        "url-template": "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-$version.tar.gz"
+                    }
                 }
             ]
         },
@@ -431,7 +479,12 @@
                         {
                             "type": "archive",
                             "url": "https://xorg.freedesktop.org/releases/individual/lib/libfontenc-1.1.4.tar.bz2",
-                            "sha256": "2cfcce810ddd48f2e5dc658d28c1808e86dcf303eaff16728b9aa3dbc0092079"
+                            "sha256": "2cfcce810ddd48f2e5dc658d28c1808e86dcf303eaff16728b9aa3dbc0092079",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": "1613",
+                                "url-template": "https://xorg.freedesktop.org/releases/individual/lib/libfontenc-$version.tar.bz2"
+                            }
                         }
                     ]
                 },
@@ -441,7 +494,12 @@
                         {
                             "type": "archive",
                             "url": "https://xorg.freedesktop.org/releases/individual/lib/libXfont-1.5.4.tar.bz2",
-                            "sha256": "1a7f7490774c87f2052d146d1e0e64518d32e6848184a18654e8d0bb57883242"
+                            "sha256": "1a7f7490774c87f2052d146d1e0e64518d32e6848184a18654e8d0bb57883242",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": "1776",
+                                "url-template": "https://xorg.freedesktop.org/releases/individual/lib/libXfont-$version.tar.bz2"
+                            }
                         }
                     ]
                 }
@@ -468,7 +526,11 @@
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
                     "tag": "v1.4.13",
-                    "commit": "bd1be9d309b420234961b6dd5d2c6364f4a08e49"
+                    "commit": "bd1be9d309b420234961b6dd5d2c6364f4a08e49",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^v([\\d.]+)$"
+                    }
                 }
             ]
         }
