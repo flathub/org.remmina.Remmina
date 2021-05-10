@@ -59,23 +59,23 @@
         "shared-modules/dbus-glib/dbus-glib-0.110.json",
         "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
         {
-            "name" : "gtk-vnc",
-            "buildsystem" : "meson",
-            "sources" : [
+            "name": "gtk-vnc",
+            "buildsystem": "meson",
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/gtk-vnc/1.2/gtk-vnc-1.2.0.tar.xz",
-                    "sha256" : "7aaf80040d47134a963742fb6c94e970fcb6bf52dc975d7ae542b2ef5f34b94a"
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/gtk-vnc/1.2/gtk-vnc-1.2.0.tar.xz",
+                    "sha256": "7aaf80040d47134a963742fb6c94e970fcb6bf52dc975d7ae542b2ef5f34b94a"
                 }
             ]
         },
         {
             "name": "vte",
-            "buildsystem" : "meson",
-            "sources" : [
+            "buildsystem": "meson",
+            "sources": [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/vte.git",
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/vte.git",
                     "tag": "0.64.1",
                     "commit": "109a6cf6e05ef55b79f768a30fdf95723ebba0d3",
                     "x-checker-data": {
@@ -129,27 +129,30 @@
                 }
             ],
             "modules": [
-		{
-		  "name": "libevent",
-		  "sources": [
-		    {
-		      "type": "archive",
-		      "url": "https://github.com/libevent/libevent/releases/download/release-2.1.12-stable//libevent-2.1.12-stable.tar.gz",
-		      "sha256": "92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb",
-		      "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": "1606",
-                        "url-template": "https://github.com/libevent/libevent/releases/download/release-$version-stable//libevent-$version-stable.tar.gz"
-                      }
-		    }
-		  ]
-		}
+                {
+                    "name": "libevent",
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://github.com/libevent/libevent/releases/download/release-2.1.12-stable//libevent-2.1.12-stable.tar.gz",
+                            "sha256": "92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": "1606",
+                                "url-template": "https://github.com/libevent/libevent/releases/download/release-$version-stable//libevent-$version-stable.tar.gz"
+                            }
+                        }
+                    ]
+                }
             ]
         },
         {
             "name": "nxproxy",
             "no-autogen": true,
-            "make-args": [ "build-lite", "PREFIX=${FLATPAK_DEST}" ],
+            "make-args": [
+                "build-lite",
+                "PREFIX=${FLATPAK_DEST}"
+            ],
             "install-rule": "install-lite",
             "sources": [
                 {
@@ -165,9 +168,6 @@
             ]
         },
         {
-            /**
-            * For smartcard support
-            */
             "name": "pcsc",
             "config-opts": [
                 "--disable-libsystemd",
@@ -232,9 +232,6 @@
             ],
             "modules": [
                 {
-                    /**
-                    * libfreerdp uses xprop to try to detect keyboard layout
-                    */
                     "name": "xprop",
                     "sources": [
                         {
@@ -249,16 +246,15 @@
                         }
                     ]
                 },
-                /* libusb-1.0 has been forced as a dependency for FreeRDP */
                 "shared-modules/libusb/libusb.json"
             ]
         },
         {
             "name": "spice-gtk",
             "buildsystem": "meson",
-            "build-options" : {
-                "env" : {
-                    "PYTHONPATH" : "/app"
+            "build-options": {
+                "env": {
+                    "PYTHONPATH": "/app"
                 }
             },
             "config-opts": [
@@ -280,16 +276,16 @@
             ],
             "modules": [
                 {
-                    "name" : "python-pyparsing",
-                    "buildsystem" : "simple",
-                    "build-commands" : [
+                    "name": "python-pyparsing",
+                    "buildsystem": "simple",
+                    "build-commands": [
                         "pip3 install --no-deps --no-build-isolation --verbose --prefix=${FLATPAK_DEST} ."
                     ],
-                    "sources" : [
+                    "sources": [
                         {
-                            "type" : "archive",
-                            "url" : "https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz",
-                            "sha256" : "c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1",
+                            "type": "archive",
+                            "url": "https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz",
+                            "sha256": "c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1",
                             "x-checker-data": {
                                 "type": "pypi",
                                 "name": "pyparsing"
@@ -298,9 +294,6 @@
                     ]
                 },
                 {
-                    /**
-                    * For smartcard support
-                    */
                     "name": "libcacard",
                     "buildsystem": "meson",
                     "config-opts": [
@@ -324,8 +317,12 @@
                     "name": "lz4",
                     "subdir": "lib",
                     "no-autogen": true,
-                    "make-args": [ "lib" ],
-                    "make-install-args": [ "PREFIX=${FLATPAK_DEST}" ],
+                    "make-args": [
+                        "lib"
+                    ],
+                    "make-install-args": [
+                        "PREFIX=${FLATPAK_DEST}"
+                    ],
                     "sources": [
                         {
                             "type": "archive",
@@ -340,9 +337,6 @@
                     ]
                 },
                 {
-                    /**
-                    * For webdav (shared folder) support
-                    */
                     "name": "phodav",
                     "buildsystem": "meson",
                     "cleanup": [
@@ -446,12 +440,6 @@
             ]
         },
         {
-            /**
-            * Xephyr version 1.17.0 and later don't work fine with GtkSocket,
-            * therefore we remain at version 1.16.4:
-            *   - https://gitlab.com//Remmina//Remmina//issues//366
-            *   - https://bugs.freedesktop.org//show_bug.cgi?id=91700
-            */
             "name": "xephyr",
             "config-opts": [
                 "--enable-kdrive",
@@ -518,7 +506,6 @@
             ]
         },
         {
-            /* Remmina main build */
             "name": "remmina",
             "buildsystem": "cmake-ninja",
             "cleanup": [
@@ -537,8 +524,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v1.4.13",
-                    "commit": "bd1be9d309b420234961b6dd5d2c6364f4a08e49",
+                    "tag": "v1.4.14",
+                    "commit": "02902fa79544c938da030ce36b44c25f0f8cdd4f",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
