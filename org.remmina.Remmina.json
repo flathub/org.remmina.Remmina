@@ -222,7 +222,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.3.2",
+                    "tag": "2.3.1",
                     "commit": "c3df0be63953ed98525d9b736ba878ad733de059",
                     "x-checker-data": {
                         "type": "git",
@@ -518,14 +518,15 @@
                 "-DWITH_NEWS:BOOL=ON",
                 "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
                 "-DWITH_FREERDP3:BOOL=OFF",
+                "-DWITH_GVNC:BOOL=ON",
                 "-DWITH_MANPAGES:BOOL=OFF"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v1.4.14",
-                    "commit": "1b8667e5d496f9d54b1db72267d2215f79965336",
+                    "tag": "v1.4.15",
+                    "commit": "446660672061d77b80acca3ca20be76296abbdb6",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
