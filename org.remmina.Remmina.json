@@ -222,8 +222,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.3.1",
-                    "commit": "136a58fbd0c3c2421a4e02d6422119406f1c32c2",
+                    "tag": "2.3.2",
+                    "commit": "c3df0be63953ed98525d9b736ba878ad733de059",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -525,8 +525,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v1.4.15",
-                    "commit": "446660672061d77b80acca3ca20be76296abbdb6",
+                    "tag": "v1.4.16",
+                    "commit": "20d315a4115f6934193e101cd34388ab68e50a64",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
