@@ -62,9 +62,6 @@
         "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
         "shared-modules/libusb/libusb.json",
         {
-            /**
-            * libfreerdp uses xprop to try to detect keyboard layout
-            */
             "name": "xprop",
             "sources": [
                 {
@@ -81,7 +78,9 @@
         },
         {
             "name": "libcups",
-            "make-args": ["libs"],
+            "make-args": [
+                "libs"
+            ],
             "no-make-install": true,
             "post-install": [
                 "make install-headers install-libs"
@@ -90,8 +89,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/OpenPrinting/cups.git",
-                    "tag": "v2.3.3op2",
-                    "commit": "3b566f73587ffa8ad9690f2399efc4508b3a9016",
+                    "tag": "v2.3.3",
+                    "commit": "82e3ee0e3230287b76a76fb8f16b92ca6e50b444",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
@@ -378,9 +377,6 @@
                     ]
                 },
                 {
-                    /**
-                    * For webdav (shared folder) support
-                    */
                     "name": "phodav",
                     "buildsystem": "meson",
                     "cleanup": [
@@ -498,12 +494,6 @@
             ]
         },
         {
-            /**
-            * Xephyr version 1.17.0 and later don't work fine with GtkSocket,
-            * therefore we remain at version 1.16.4:
-            *   - https://gitlab.com//Remmina//Remmina//issues//366
-            *   - https://bugs.freedesktop.org//show_bug.cgi?id=91700
-            */
             "name": "xephyr",
             "config-opts": [
                 "--enable-kdrive",
@@ -572,8 +562,7 @@
         {
             "name": "freerdp",
             "buildsystem": "cmake-ninja",
-            "cleanup": [
-            ],
+            "cleanup": [],
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
                 "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
@@ -609,7 +598,6 @@
             ]
         },
         {
-            /* Remmina main build */
             "name": "remmina",
             "buildsystem": "cmake-ninja",
             "cleanup": [
