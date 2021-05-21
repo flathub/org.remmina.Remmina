@@ -68,9 +68,6 @@
         "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
         "shared-modules/libusb/libusb.json",
         {
-            /**
-            * libfreerdp uses xprop to try to detect keyboard layout
-            */
             "name": "xprop",
             "sources": [
                 {
@@ -326,9 +323,6 @@
                     ]
                 },
                 {
-                    /**
-                    * For webdav (shared folder) support
-                    */
                     "name": "phodav",
                     "buildsystem": "meson",
                     "cleanup": [
@@ -446,12 +440,6 @@
             ]
         },
         {
-            /**
-            * Xephyr version 1.17.0 and later don't work fine with GtkSocket,
-            * therefore we remain at version 1.16.4:
-            *   - https://gitlab.com//Remmina//Remmina//issues//366
-            *   - https://bugs.freedesktop.org//show_bug.cgi?id=91700
-            */
             "name": "xephyr",
             "config-opts": [
                 "--enable-kdrive",
@@ -520,8 +508,7 @@
         {
             "name": "freerdp",
             "buildsystem": "cmake-ninja",
-            "cleanup": [
-            ],
+            "cleanup": [],
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
                 "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
@@ -554,7 +541,6 @@
             ]
         },
         {
-            /* Remmina main build */
             "name": "remmina",
             "buildsystem": "cmake-ninja",
             "cleanup": [
@@ -575,8 +561,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v1.4.16",
-                    "commit": "20d315a4115f6934193e101cd34388ab68e50a64",
+                    "tag": "v1.4.17",
+                    "commit": "0ef1621b3e16b3168213147a2bfca39da2c2668f",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
