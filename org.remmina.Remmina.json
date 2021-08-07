@@ -1,7 +1,7 @@
 {
     "app-id": "org.remmina.Remmina",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.38",
+    "runtime-version": "3.40",
     "sdk": "org.gnome.Sdk",
     "command": "remmina",
     "cleanup": [
@@ -385,7 +385,7 @@
                     "type": "git",
                     "url": "https://github.com/jedisct1/libsodium.git",
                     "branch": "stable",
-                    "commit": "a016aea61214668827e18c6278ac25b0bbc98ca5"
+                    "commit": "7d300e4c19991e212e7e2eae8e272df679e9cd56"
                 }
             ],
             "post-install": [
@@ -531,8 +531,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.3.2",
-                    "commit": "c3df0be63953ed98525d9b736ba878ad733de059",
+                    "tag": "2.4.0",
+                    "commit": "f797e200a2cd47fd42318359b8ae4d46e6507eec",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
