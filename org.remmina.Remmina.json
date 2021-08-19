@@ -268,8 +268,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.spice-space.org/download/libcacard/libcacard-2.8.0.tar.xz",
-                            "sha256": "8005b93c3139ff739057efb19f9dac1d0993ffb0b913111505af6a91711ef22b",
+                            "url": "https://www.spice-space.org/download/libcacard/libcacard-2.8.1.tar.xz",
+                            "sha256": "fbbf4de8cb7db5bdff5ecb672ff0dbe6939fb9f344b900d51ba6295329a332e7",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 18776,
