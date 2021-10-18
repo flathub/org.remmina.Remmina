@@ -41,6 +41,7 @@
         "--talk-name=org.gnome.Shell",
         "--talk-name=com.canonical.Unity",
         "--system-talk-name=org.freedesktop.Avahi",
+        "--filesystem=xdg-run/pipewire-0",
         "--filesystem=home",
         "--filesystem=xdg-download"
     ],
@@ -481,8 +482,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v1.4.20",
-                    "commit": "0bc0560e73687581f7d5f9d006fde8f8f7bd1c4a",
+                    "tag": "v1.4.21",
+                    "commit": "bbd98e2b69c99f30c81ffbc88ebc27d469287e4d",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
