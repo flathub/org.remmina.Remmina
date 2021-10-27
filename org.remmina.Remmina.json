@@ -256,8 +256,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz",
-                            "sha256": "c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1",
+                            "url": "https://files.pythonhosted.org/packages/3e/f2/e451732f6263b3b95400cd8f938bc238f109b6b5431491d45915421025e4/pyparsing-3.0.2.tar.gz",
+                            "sha256": "9366e57ad2d2faa8dd89775ef284ecae0fc4012c24717f3705613b262d712090",
                             "x-checker-data": {
                                 "type": "pypi",
                                 "name": "pyparsing"
