@@ -248,6 +248,9 @@
             ],
             "modules": [
                 {
+                    /**
+                    * Do not upgrade to 3.0.x till we discover why spice-common cannot find pyparsing
+                    */
                     "name": "python-pyparsing",
                     "buildsystem": "simple",
                     "build-commands": [
@@ -260,7 +263,7 @@
                             "sha256": "c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1",
                             "x-checker-data": {
                                 "type": "pypi",
-                                "name": "pyparsing"
+                                "name": "wheel"
                             }
                         }
                     ]
