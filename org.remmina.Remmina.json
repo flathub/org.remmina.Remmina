@@ -95,8 +95,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/OpenPrinting/cups/archive/refs/tags/v2.3.3op2.tar.gz",
-                    "sha256": "5d7dc1f05cde3d5c31d3a2b3b54d519ca74e42c1b25df1add9a1802cd13c65ad",
+                    "url": "https://github.com/OpenPrinting/cups/archive/refs/tags/v2.4b1.tar.gz",
+                    "sha256": "cabb3c41a536153cd75072621039f7a47cacde078ed44e0346cb1b6068806b01",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 380,
@@ -256,8 +256,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz",
-                            "sha256": "c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1",
+                            "url": "https://files.pythonhosted.org/packages/3e/f2/e451732f6263b3b95400cd8f938bc238f109b6b5431491d45915421025e4/pyparsing-3.0.2.tar.gz",
+                            "sha256": "9366e57ad2d2faa8dd89775ef284ecae0fc4012c24717f3705613b262d712090",
                             "x-checker-data": {
                                 "type": "pypi",
                                 "name": "pyparsing"
