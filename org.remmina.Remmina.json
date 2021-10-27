@@ -251,7 +251,7 @@
                     "name": "python-pyparsing",
                     "buildsystem": "simple",
                     "build-commands": [
-                        "pip3 install --no-deps --no-build-isolation --verbose --prefix=${FLATPAK_DEST} ."
+                        "python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1"
                     ],
                     "sources": [
                         {
