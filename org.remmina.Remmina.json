@@ -255,16 +255,16 @@
                     "name": "python-pyparsing",
                     "buildsystem": "simple",
                     "build-commands": [
-                        "pip3 install --no-deps --no-build-isolation --verbose --prefix=${FLATPAK_DEST} ."
+                        "python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1"
                     ],
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://files.pythonhosted.org/packages/4e/be/8139f127b4db2f79c8b117c80af56a3078cc4824b5b94250c7f81a70e03b/wheel-0.37.0.tar.gz",
-                            "sha256": "e2ef7239991699e3355d54f8e968a21bb940a1dbf34a4d226741e64462516fad",
+                            "url": "https://files.pythonhosted.org/packages/a0/e4/2bae99e2bbdeb17c7cb9c2f7ef6022383ffcab8461d2ec339ff19ce4a969/pyparsing-3.0.3.tar.gz",
+                            "sha256": "9e3511118010f112a4b4b435ae50e1eaa610cda191acb9e421d60cf5fde83455",
                             "x-checker-data": {
                                 "type": "pypi",
-                                "name": "wheel"
+                                "name": "pyparsing"
                             }
                         }
                     ]
