@@ -244,6 +244,10 @@
                         "project-id": 11576,
                         "url-template": "https://www.spice-space.org/download/gtk/spice-gtk-$version.tar.xz"
                     }
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/spice-common-meson-fix.patch"
                 }
             ],
             "modules": [
