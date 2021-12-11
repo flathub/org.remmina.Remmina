@@ -129,8 +129,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag": "0.66.1",
-                    "commit": "29bc0a2d7fefc0e8bc5f60b72c3a666809d490f9",
+                    "tag": "0.66.2",
+                    "commit": "6a0a9fed4d54122df31c13d601b1509597a36f2b",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -486,8 +486,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v1.4.21",
-                    "commit": "bbd98e2b69c99f30c81ffbc88ebc27d469287e4d",
+                    "tag": "v1.4.22",
+                    "commit": "ce660e78ff5c3dbc6887b154af8ebaa43bca4ea4",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
