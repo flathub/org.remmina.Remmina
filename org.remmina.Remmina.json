@@ -456,8 +456,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.4.1",
-                    "commit": "d39a7ba5c38e3ba3b99b1558dc2ab0970cbfb0c5",
+                    "tag": "2.5.0",
+                    "commit": "d50aef95520df4216c638495a6049125c00742cb",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
