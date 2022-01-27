@@ -492,6 +492,11 @@
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
                     }
+                },
+                {
+                    "type": "patch",
+                    "use-git": "true",
+                    "path": "patches/Appdata-update.patch"
                 }
             ]
         }

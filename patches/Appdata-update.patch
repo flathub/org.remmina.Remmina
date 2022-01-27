@@ -1,0 +1,50 @@
+From 90456a11611db187bd9ac50722eb3ad3585d92b6 Mon Sep 17 00:00:00 2001
+From: "Antenore Gatta (tmow)" <antenore@simbiosi.org>
+Date: Thu, 27 Jan 2022 22:03:57 +0100
+Subject: [PATCH 1/2] Appdata update
+
+---
+ data/desktop/org.remmina.Remmina.appdata.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/desktop/org.remmina.Remmina.appdata.xml b/data/desktop/org.remmina.Remmina.appdata.xml
+index 863ef388d..dfbf1d59e 100644
+--- a/data/desktop/org.remmina.Remmina.appdata.xml
++++ b/data/desktop/org.remmina.Remmina.appdata.xml
+@@ -18,7 +18,7 @@
+   <summary xml:lang="hr">Klijent za upravljanje udaljenom radnom površinom</summary>
+   <content_rating type="oars-1.1" />
+   <releases>
+-      <release version="1.4.22" date="2021-12-11"/>
++      <release version="1.4.23" date="2021-19-12"/>
+   </releases>
+   <description>
+     <p>
+-- 
+2.27.0
+
+From 9efeae920a0d03c26028c1ce5a30663c435d4cdc Mon Sep 17 00:00:00 2001
+From: "Antenore Gatta (tmow)" <antenore@simbiosi.org>
+Date: Thu, 27 Jan 2022 22:10:16 +0100
+Subject: [PATCH 2/2] Appdata update
+
+---
+ data/desktop/org.remmina.Remmina.appdata.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/desktop/org.remmina.Remmina.appdata.xml b/data/desktop/org.remmina.Remmina.appdata.xml
+index dfbf1d59e..adc31b87c 100644
+--- a/data/desktop/org.remmina.Remmina.appdata.xml
++++ b/data/desktop/org.remmina.Remmina.appdata.xml
+@@ -18,7 +18,7 @@
+   <summary xml:lang="hr">Klijent za upravljanje udaljenom radnom površinom</summary>
+   <content_rating type="oars-1.1" />
+   <releases>
+-      <release version="1.4.23" date="2021-19-12"/>
++      <release version="1.4.23" date="2021-12-19"/>
+   </releases>
+   <description>
+     <p>
+-- 
+2.27.0
+
