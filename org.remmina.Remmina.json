@@ -115,9 +115,9 @@
                     "url": "https://download.gnome.org/sources/gtk-vnc/1.2/gtk-vnc-1.2.0.tar.xz",
                     "sha256": "7aaf80040d47134a963742fb6c94e970fcb6bf52dc975d7ae542b2ef5f34b94a",
                     "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 13142,
-                        "url-template": "https://download.gnome.org/sources/gtk-vnc/1.2/gtk-vnc-$version.tar.xz"
+                        "type": "gnome",
+                        "name": "gtk-vnc",
+                        "stable-only": true
                     }
                 }
             ]
