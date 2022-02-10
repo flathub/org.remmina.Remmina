@@ -486,17 +486,12 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v1.4.23",
-                    "commit": "a03c1648a090458736434c77c0be00a7cf9cc44b",
+                    "tag": "v1.4.24",
+                    "commit": "ffa6a7ef9c6be7951bac23d14df148098fd2d3fa",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
                     }
-                },
-                {
-                    "type": "patch",
-                    "use-git": "true",
-                    "path": "patches/Appdata-update.patch"
                 }
             ]
         }
