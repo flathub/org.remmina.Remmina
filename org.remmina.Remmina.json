@@ -129,8 +129,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag": "0.66.2",
-                    "commit": "6a0a9fed4d54122df31c13d601b1509597a36f2b",
+                    "tag": "0.67.90",
+                    "commit": "08f6c596d1a05e20541b8268d19aede55ac99f4d",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
