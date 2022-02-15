@@ -371,7 +371,7 @@
                     "type": "git",
                     "url": "https://github.com/jedisct1/libsodium.git",
                     "branch": "stable",
-                    "commit": "c53b4cea259a2a12ea43988e84f35a1ebd8cb5aa"
+                    "commit": "0e88616f87dca25faba04f3d21c47ee04f088a5e"
                 }
             ],
             "post-install": [
