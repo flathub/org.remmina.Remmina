@@ -42,6 +42,7 @@
         "--talk-name=com.canonical.Unity",
         "--system-talk-name=org.freedesktop.Avahi",
         "--filesystem=xdg-run/pipewire-0",
+        "--filesystem=xdg-run/gvfsd",
         "--filesystem=home",
         "--filesystem=xdg-download"
     ],
