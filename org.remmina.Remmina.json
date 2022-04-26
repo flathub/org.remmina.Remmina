@@ -282,7 +282,7 @@
                     "name": "python3-pyparsing",
                     "buildsystem": "simple",
                     "build-commands": [
-                        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyparsing==3.0.7\" --no-build-isolation"
+                        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyparsing==3.0.8\" --no-build-isolation"
                     ],
                     "sources": [
                         {
