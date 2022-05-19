@@ -105,7 +105,7 @@
                 {
                     "type": "archive",
                     "url": "https://xorg.freedesktop.org/archive/individual/app/xauth-1.1.2.tar.xz",
-                    "sha256": "164ea0a29137b284a47b886ef2affcb0a74733bf3aad04f9b106b1a6c82ebd92",
+                    "sha256": "78ba6afd19536ced1dddb3276cba6e9555a211b468a06f95f6a97c62ff8ee200",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 5253,
