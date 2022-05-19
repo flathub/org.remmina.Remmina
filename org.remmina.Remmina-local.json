@@ -70,6 +70,9 @@
         "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
         "shared-modules/libusb/libusb.json",
         {
+            /**
+            * libfreerdp uses xprop to try to detect keyboard layout
+            */
             "name": "xprop",
             "sources": [
                 {
@@ -85,6 +88,9 @@
             ]
         },
         {
+            /**
+            * Remmina uses xauth, that needs libXmu
+            */
             "name": "libXmu",
             "sources": [
                 {
@@ -100,6 +106,9 @@
             ]
         },
         {
+            /**
+            * Remmina uses xauth with the SSH X11 Forwarding
+            */
             "name": "xauth",
             "sources": [
                 {
@@ -287,8 +296,8 @@
                     "sources": [
                         {
                             "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/6c/10/a7d0fa5baea8fe7b50f448ab742f26f52b80bfca85ac2be9d35cdd9a3246/pyparsing-3.0.9-py3-none-any.whl",
-                            "sha256": "5026bae9a10eeaefb61dab2f09052b9f4307d44aee4eda64b309723d8d206bbc",
+                            "url": "https://files.pythonhosted.org/packages/d9/41/d9cfb4410589805cd787f8a82cddd13142d9bf7449d12adf2d05a4a7d633/pyparsing-3.0.8-py3-none-any.whl",
+                            "sha256": "ef7b523f6356f763771559412c0d7134753f037822dad1b16945b7b846f7ad06",
                             "x-checker-data": {
                                 "type": "pypi",
                                 "name": "pyparsing",
@@ -341,6 +350,9 @@
                     ]
                 },
                 {
+                    /**
+                    * For webdav (shared folder) support
+                    */
                     "name": "phodav",
                     "buildsystem": "meson",
                     "cleanup": [
@@ -400,9 +412,14 @@
             "name": "libsodium",
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/jedisct1/libsodium.git",
-                    "commit": "7389bf7f2968be75520e932704f18f038c29e581"
+                    "type": "archive",
+                    "url": "https://github.com/jedisct1/libsodium/archive/1.0.18-RELEASE.tar.gz",
+                    "sha256": "b7292dd1da67a049c8e78415cd498ec138d194cfdb302e716b08d26b80fecc10",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 1728,
+                        "url-template": "https://github.com/jedisct1/libsodium/archive/$version.tar.gz"
+                    }
                 }
             ],
             "post-install": [
@@ -493,6 +510,7 @@
             ]
         },
         {
+            /* Remmina main build */
             "name": "remmina",
             "buildsystem": "cmake-ninja",
             "cleanup": [
@@ -501,7 +519,7 @@
                 "/share/applications/remmina-gnome.desktop"
             ],
             "config-opts": [
-                "-DCMAKE_BUILD_TYPE:STRING=Release",
+                "-DCMAKE_BUILD_TYPE:STRING=Debug",
                 "-DWITH_NEWS:BOOL=ON",
                 "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
                 "-DWITH_FREERDP3:BOOL=OFF",
@@ -512,19 +530,8 @@
             ],
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v1.4.26",
-                    "commit": "fa11b6d1c1f20922b594cc2a8c204f9ea6592836",
-                    "x-checker-data": {
-                        "type": "git",
-                        "tag-pattern": "^v([\\d.]+)$"
-                    }
-                },
-                {
-                    "type": "patch",
-                    "use-git": "true",
-                    "path": "patches/0001-Fix-dangling-pointer-after-scrolled_container-destru.patch"
+                    "type": "dir",
+                    "path": "../"
                 }
             ]
         }
