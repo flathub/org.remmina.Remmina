@@ -127,8 +127,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/OpenPrinting/cups/archive/refs/tags/v2.4.1.tar.gz",
-                    "sha256": "df195c931349949293c832e1337527e7831e1225f567b60caf5d9c206c2bffdc",
+                    "url": "https://github.com/OpenPrinting/cups/archive/refs/tags/v2.4.2.tar.gz",
+                    "sha256": "7095b2977bb728ded5566a5c802866062840d6541fd027836865949a407c3682",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 380,
