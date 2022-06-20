@@ -515,17 +515,12 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v1.4.26",
-                    "commit": "fa11b6d1c1f20922b594cc2a8c204f9ea6592836",
+                    "tag": "v1.4.27",
+                    "commit": "9d409a3556c8c2759a376b4f4ac5149db7aacf4f",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
                     }
-                },
-                {
-                    "type": "patch",
-                    "use-git": "true",
-                    "path": "patches/0001-Fix-dangling-pointer-after-scrolled_container-destru.patch"
                 }
             ]
         }
