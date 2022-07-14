@@ -521,6 +521,10 @@
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
                     }
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/0001-fix-SVG-files-have-wrong-size.patch"
                 }
             ]
         }
