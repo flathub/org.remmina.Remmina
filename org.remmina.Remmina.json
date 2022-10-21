@@ -161,8 +161,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag": "0.70.0",
-                    "commit": "ae4a5d7df9e32ab40ceca5e06240561e819db148",
+                    "tag": "0.70.1",
+                    "commit": "5bf476f1d7283bc805ac8ae6abe94f81ffd7be05",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -487,8 +487,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.8.0",
-                    "commit": "e3fc97feb512053189e276b2ca79762990bb8c4c",
+                    "tag": "2.8.1",
+                    "commit": "0ad3f49f0e7eb78586acc6bf6e4605f96f88954e",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
