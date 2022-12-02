@@ -532,10 +532,6 @@
                 {
                     "type": "patch",
                     "path": "patches/0001-fix-SVG-files-have-wrong-size.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/0001-fix-svg-size-and-format.patch"
                 }
             ]
         }
