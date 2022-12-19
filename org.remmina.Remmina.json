@@ -1,7 +1,7 @@
 {
     "app-id": "org.remmina.Remmina",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
+    "runtime-version": "43",
     "sdk": "org.gnome.Sdk",
     "command": "remmina",
     "cleanup": [
@@ -48,14 +48,14 @@
     "add-extensions": {
         "org.freedesktop.Platform.ffmpeg-full": {
             "directory": "lib/ffmpeg",
-            "version": "21.08",
+            "version": "22.08",
             "add-ld-path": ".",
             "no-autodownload": false,
             "autodelete": false
         },
         "org.freedesktop.Platform.openh264": {
             "directory": "lib/openh264",
-            "version": "2.1.0",
+            "version": "2.3.0",
             "add-ld-path": "."
         }
     },
@@ -73,12 +73,12 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://xorg.freedesktop.org/archive/individual/app/xprop-1.2.5.tar.bz2",
-                    "sha256": "9b92ed0316bf2486121d8bac88bd1878f16b43bd335f18009b1f941f1eca93a1",
+                    "url": "https://xorg.freedesktop.org/archive/individual/app/xprop-1.2.6.tar.xz",
+                    "sha256": "580b8525b12ecc0144aa16c88b0aafa76d2e799b44c8c6c50f9ce92788b5586e",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 14958,
-                        "url-template": "https://xorg.freedesktop.org/archive/individual/app/xprop-$version.tar.bz2"
+                        "url-template": "https://xorg.freedesktop.org/archive/individual/app/xprop-$version.tar.xz"
                     }
                 }
             ]
@@ -275,6 +275,10 @@
                         "project-id": 11576,
                         "url-template": "https://www.spice-space.org/download/gtk/spice-gtk-$version.tar.xz"
                     }
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/spice-no-polkit-action.patch"
                 }
             ],
             "modules": [
@@ -445,7 +449,9 @@
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "config-opts": [
-                "-DCMAKE_BUILD_TYPE:STRING=Release"
+                "-DCMAKE_BUILD_TYPE:STRING=Release",
+                "-DWITH_EXAMPLES:BOOL=OFF",
+                "-DWITH_TESTS:BOOL=OFF"
             ],
             "cleanup": [
                 "/bin",
@@ -454,8 +460,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.13.tar.gz",
-                    "sha256": "0ae5bb9175dc0a602fe85c1cf591ac47ee5247b87f2bf164c16b05f87cbfa81a",
+                    "url": "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.14.tar.gz",
+                    "sha256": "83104e4f7e28b02f8bf6b010d69b626fae591f887e949816305daebae527c9a5",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1756,
@@ -469,22 +475,24 @@
             "buildsystem": "cmake-ninja",
             "cleanup": [],
             "config-opts": [
+                "-DCMAKE_VERBOSE_MAKEFILE=ON",
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
                 "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
                 "-DWITH_WAYLAND:BOOL=ON",
-                "-DCHANNEL_TSMF:BOOL=ON",
+                "-DCHANNEL_TSMF:BOOL=OFF",
                 "-DCHANNEL_URBDRC:BOOL=ON",
                 "-DBUILD_TESTING:BOOL=OFF",
-                "-DWITH_ICU:BOOL=ON",
                 "-DWITH_MANPAGES:BOOL=OFF",
                 "-DWITH_GSSAPI:BOOL=OFF",
                 "-DWITH_PCSC:BOOL=ON",
+                "-DWITH_SWSCALE:BOOL=ON",
                 "-DWITH_SERVER:BOOL=OFF",
+                "-DWITH_SAMPLE:BOOL=OFF",
                 "-DWITH_CUPS:BOOL=ON",
                 "-DWITH_FFMPEG:BOOL=ON",
+                "-DWITH_DSP_FFMPEG:BOOL=ON",
                 "-DWITH_OSS:BOOL=OFF",
                 "-DWITH_PULSE:BOOL=ON",
-                "-DWITH_CHANNELS:BOOL=ON",
                 "-DWITH_LIBSYSTEMD:BOOL=OFF"
             ],
             "sources": [
