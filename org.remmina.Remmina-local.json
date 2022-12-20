@@ -55,7 +55,7 @@
         },
         "org.freedesktop.Platform.openh264": {
             "directory": "lib/openh264",
-            "version": "2.1.0",
+            "version": "2.3.0",
             "add-ld-path": "."
         }
     },
@@ -487,22 +487,24 @@
             "buildsystem": "cmake-ninja",
             "cleanup": [],
             "config-opts": [
+                "-DCMAKE_VERBOSE_MAKEFILE=ON",
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
                 "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
                 "-DWITH_WAYLAND:BOOL=ON",
-                "-DCHANNEL_TSMF:BOOL=ON",
+                "-DCHANNEL_TSMF:BOOL=OFF",
                 "-DCHANNEL_URBDRC:BOOL=ON",
                 "-DBUILD_TESTING:BOOL=OFF",
-                "-DWITH_ICU:BOOL=ON",
                 "-DWITH_MANPAGES:BOOL=OFF",
                 "-DWITH_GSSAPI:BOOL=OFF",
                 "-DWITH_PCSC:BOOL=ON",
+                "-DWITH_SWSCALE:BOOL=ON",
                 "-DWITH_SERVER:BOOL=OFF",
+                "-DWITH_SAMPLE:BOOL=OFF",
                 "-DWITH_CUPS:BOOL=ON",
                 "-DWITH_FFMPEG:BOOL=ON",
+                "-DWITH_DSP_FFMPEG:BOOL=ON",
                 "-DWITH_OSS:BOOL=OFF",
                 "-DWITH_PULSE:BOOL=ON",
-                "-DWITH_CHANNELS:BOOL=ON",
                 "-DWITH_LIBSYSTEMD:BOOL=OFF"
             ],
             "sources": [
