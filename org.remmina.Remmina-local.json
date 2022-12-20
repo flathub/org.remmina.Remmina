@@ -375,7 +375,10 @@
                             "x-checker-data": {
                                 "type": "gnome",
                                 "name": "phodav",
-                                "stable-only": false
+                                "stable-only": false,
+                                "versions": {
+                                    "<": "3"
+                                }
                             }
                         }
                     ]
