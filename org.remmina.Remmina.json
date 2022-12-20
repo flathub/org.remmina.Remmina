@@ -363,10 +363,7 @@
                             "x-checker-data": {
                                 "type": "gnome",
                                 "name": "phodav",
-                                "stable-only": false,
-                                "versions": {
-                                    "<": "3"
-                                }
+                                "stable-only": false
                             }
                         }
                     ]
@@ -518,7 +515,6 @@
             ],
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
-                "-DWITH_NEWS:BOOL=ON",
                 "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
                 "-DWITH_FREERDP3:BOOL=OFF",
                 "-DWITH_GVNC:BOOL=ON",
