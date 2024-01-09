@@ -1,7 +1,7 @@
 {
     "app-id": "org.remmina.Remmina",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "45",
+    "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "command": "remmina",
     "cleanup": [
