@@ -30,7 +30,6 @@
         "--device=all",
         "--talk-name=ca.desrt.dconf",
         "--talk-name=org.gtk.vfs.*",
-        "--talk-name=org.freedesktop.portal.Fcitx",
         "--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.freedesktop.secrets",
         "--talk-name=org.kde.StatusNotifierWatcher",
