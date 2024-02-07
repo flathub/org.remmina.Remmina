@@ -72,8 +72,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://xorg.freedesktop.org/archive/individual/app/xprop-1.2.6.tar.xz",
-                    "sha256": "580b8525b12ecc0144aa16c88b0aafa76d2e799b44c8c6c50f9ce92788b5586e",
+                    "url": "https://xorg.freedesktop.org/archive/individual/app/xprop-1.2.7.tar.xz",
+                    "sha256": "4436e3148bb91a162406230d9f736a49ca8b50b74790015dc15d78d6ce8e825f",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 14958,
@@ -159,8 +159,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag": "0.74.1",
-                    "commit": "eee37c871173d04387cd0004dde7f8676f390f62",
+                    "tag": "0.75.0",
+                    "commit": "de5df02c42eb5de98f92f5cb4520fc963a54ab51",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -344,9 +344,6 @@
                     ]
                 },
                 {
-                    /**
-                    * For webdav (shared folder) support
-                    */
                     "name": "phodav",
                     "buildsystem": "meson",
                     "cleanup": [
@@ -432,8 +429,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.libssh.org/files/0.10/libssh-0.10.5.tar.xz",
-                    "sha256": "b60e2ff7f367b9eee2b5634d3a63303ddfede0e6a18dfca88c44a8770e7e4234",
+                    "url": "https://www.libssh.org/files/0.10/libssh-0.10.6.tar.xz",
+                    "sha256": "1861d498f5b6f1741b6abc73e608478491edcf9c9d4b6630eef6e74596de9dc1",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1729,
@@ -496,8 +493,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.11.2",
-                    "commit": "a38c1be9eee39a9bc22b511fffe96e63fdf8ebe7",
+                    "tag": "3.2.0",
+                    "commit": "bb87d4ca5072c40e83ed92130a6674bf245d1f2f",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -526,8 +523,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v.1.4.33",
-                    "commit": "2c4e1479433e51418ecb6089f35182bfebc5b57e",
+                    "tag": "v1.4.34",
+                    "commit": "75a0bdb795d99e052690178ae0d81ebdbd2cbdd3",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
