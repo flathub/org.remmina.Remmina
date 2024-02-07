@@ -427,7 +427,8 @@
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
                 "-DWITH_NACL:BOOL=ON",
                 "-DNACL_INCLUDE_DIR:PATH=/app/include/",
-                "-DWITH_EXAMPLES:BOOL=OFF"
+                "-DWITH_EXAMPLES:BOOL=OFF",
+                "-DWITH_GCRYPT:BOOL=ON"
             ],
             "sources": [
                 {
@@ -465,6 +466,21 @@
                         "project-id": 1756,
                         "url-template": "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-$version.tar.gz"
                     }
+                }
+            ]
+        },
+        {
+            "name": "curl",
+            "buildsystem": "autotools",
+            "cleanup": [],
+            "config-opts": [
+                "--with-openssl"
+            ],
+            "sources": [
+                {
+                "type": "archive",
+                "url": "https://github.com/curl/curl/releases/download/curl-7_81_0/curl-7.81.0.tar.xz",
+                "sha256": "a067b688d1645183febc31309ec1f3cdce9213d02136b6a6de3d50f69c95a7d3"
                 }
             ]
         },
@@ -526,8 +542,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v.1.4.33",
-                    "commit": "2c4e1479433e51418ecb6089f35182bfebc5b57e",
+                    "tag": "v1.4.34",
+                    "commit": "75a0bdb795d99e052690178ae0d81ebdbd2cbdd3",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
