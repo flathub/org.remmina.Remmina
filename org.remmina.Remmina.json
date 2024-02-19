@@ -1,7 +1,7 @@
 {
     "app-id": "org.remmina.Remmina",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "43",
+    "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "command": "remmina",
     "cleanup": [
@@ -30,7 +30,6 @@
         "--device=all",
         "--talk-name=ca.desrt.dconf",
         "--talk-name=org.gtk.vfs.*",
-        "--talk-name=org.freedesktop.portal.Fcitx",
         "--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.freedesktop.secrets",
         "--talk-name=org.kde.StatusNotifierWatcher",
@@ -126,8 +125,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/OpenPrinting/cups/archive/refs/tags/v2.4.5.tar.gz",
-                    "sha256": "acd5bb2eb4ca7abebb7387182fd010ccc0d6f30c8589e20f707edc831d80bf09",
+                    "url": "https://github.com/OpenPrinting/cups/archive/refs/tags/v2.4.7.tar.gz",
+                    "sha256": "9b9a126018462f7326baa828bdf861939e37e00bc63884e03129b3f3360c44fe",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 380,
@@ -160,8 +159,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag": "0.72.2",
-                    "commit": "854e56263454077ab009aaff67f1afe0dbd52878",
+                    "tag": "0.74.1",
+                    "commit": "eee37c871173d04387cd0004dde7f8676f390f62",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -291,8 +290,8 @@
                     "sources": [
                         {
                             "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/a4/24/6ae4c9c45cf99d96b06b5d99e25526c060303171fb0aea9da2bfd7dbde93/pyparsing-3.1.0-py3-none-any.whl",
-                            "sha256": "d554a96d1a7d3ddaf7183104485bc19fd80543ad6ac5bdb6426719d766fb06c1",
+                            "url": "https://files.pythonhosted.org/packages/39/92/8486ede85fcc088f1b3dba4ce92dd29d126fd96b0008ea213167940a2475/pyparsing-3.1.1-py3-none-any.whl",
+                            "sha256": "32c7c0b711493c72ff18a981d24f28aaf9c1fb7ed5e9667c9e84e3db623bdbfb",
                             "x-checker-data": {
                                 "type": "pypi",
                                 "name": "pyparsing",
@@ -345,6 +344,9 @@
                     ]
                 },
                 {
+                    /**
+                    * For webdav (shared folder) support
+                    */
                     "name": "phodav",
                     "buildsystem": "meson",
                     "cleanup": [
@@ -352,21 +354,17 @@
                         "/sbin"
                     ],
                     "config-opts": [
-                        "-Dgtk_doc=disabled",
-                        "-Dsystemd=disabled"
+                        "-Dgtk_doc=disabled"
                     ],
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://download.gnome.org/sources/phodav/2.5/phodav-2.5.tar.xz",
-                            "sha256": "71f0a9cd70afd4dd1412a0298331dbb8ac71c0377f52117afc15eb88dc6fb910",
+                            "url": "https://download.gnome.org/sources/phodav/3.0/phodav-3.0.tar.xz",
+                            "sha256": "392ec2d06d50300dcff1ef269a2a985304e29bce3520002fca29f2edc1d138d1",
                             "x-checker-data": {
                                 "type": "gnome",
                                 "name": "phodav",
-                                "stable-only": false,
-                                "versions": {
-                                    "<": "3"
-                                }
+                                "stable-only": false
                             }
                         }
                     ]
@@ -408,8 +406,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/jedisct1/libsodium/archive/1.0.18-RELEASE.tar.gz",
-                    "sha256": "b7292dd1da67a049c8e78415cd498ec138d194cfdb302e716b08d26b80fecc10",
+                    "url": "https://github.com/jedisct1/libsodium/archive/1.0.19.tar.gz",
+                    "sha256": "1d281a8a5e299a38e5c16ff60f293bba0796dc0fda8e49bc582d4bc1935572ed",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1728,
@@ -429,7 +427,8 @@
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
                 "-DWITH_NACL:BOOL=ON",
                 "-DNACL_INCLUDE_DIR:PATH=/app/include/",
-                "-DWITH_EXAMPLES:BOOL=OFF"
+                "-DWITH_EXAMPLES:BOOL=OFF",
+                "-DWITH_GCRYPT:BOOL=ON"
             ],
             "sources": [
                 {
@@ -471,6 +470,21 @@
             ]
         },
         {
+            "name": "curl",
+            "buildsystem": "autotools",
+            "cleanup": [],
+            "config-opts": [
+                "--with-openssl"
+            ],
+            "sources": [
+                {
+                "type": "archive",
+                "url": "https://github.com/curl/curl/releases/download/curl-7_81_0/curl-7.81.0.tar.xz",
+                "sha256": "a067b688d1645183febc31309ec1f3cdce9213d02136b6a6de3d50f69c95a7d3"
+                }
+            ]
+        },
+        {
             "name": "freerdp",
             "buildsystem": "cmake-ninja",
             "cleanup": [],
@@ -490,7 +504,6 @@
                 "-DWITH_SAMPLE:BOOL=OFF",
                 "-DWITH_CUPS:BOOL=ON",
                 "-DWITH_FFMPEG:BOOL=ON",
-                "-DWITH_DSP_FFMPEG:BOOL=ON",
                 "-DWITH_OSS:BOOL=OFF",
                 "-DWITH_PULSE:BOOL=ON",
                 "-DWITH_LIBSYSTEMD:BOOL=OFF"
@@ -499,8 +512,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.10.0",
-                    "commit": "7471ae383e7b7a613f275e19f7b54958a193c891",
+                    "tag": "2.11.2",
+                    "commit": "a38c1be9eee39a9bc22b511fffe96e63fdf8ebe7",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"

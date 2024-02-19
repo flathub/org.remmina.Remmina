@@ -1,7 +1,7 @@
 {
     "app-id": "org.remmina.Remmina",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "43",
+    "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "command": "remmina",
     "cleanup": [
@@ -30,7 +30,6 @@
         "--device=all",
         "--talk-name=ca.desrt.dconf",
         "--talk-name=org.gtk.vfs.*",
-        "--talk-name=org.freedesktop.portal.Fcitx",
         "--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.freedesktop.secrets",
         "--talk-name=org.kde.StatusNotifierWatcher",
@@ -135,8 +134,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/OpenPrinting/cups/archive/refs/tags/v2.4.2.tar.gz",
-                    "sha256": "7095b2977bb728ded5566a5c802866062840d6541fd027836865949a407c3682",
+                    "url": "https://github.com/OpenPrinting/cups/archive/refs/tags/v2.4.7.tar.gz",
+                    "sha256": "9b9a126018462f7326baa828bdf861939e37e00bc63884e03129b3f3360c44fe",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 380,
@@ -169,8 +168,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag": "0.70.1",
-                    "commit": "5bf476f1d7283bc805ac8ae6abe94f81ffd7be05",
+                    "tag": "0.74.1",
+                    "commit": "eee37c871173d04387cd0004dde7f8676f390f62",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -277,8 +276,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.spice-space.org/download/gtk/spice-gtk-0.41.tar.xz",
-                    "sha256": "d8f8b5cbea9184702eeb8cc276a67d72acdb6e36e7c73349fb8445e5bca0969f",
+                    "url": "https://www.spice-space.org/download/gtk/spice-gtk-0.42.tar.xz",
+                    "sha256": "9380117f1811ad1faa1812cb6602479b6290d4a0d8cc442d44427f7f6c0e7a58",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 11576,
@@ -300,8 +299,8 @@
                     "sources": [
                         {
                             "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/6c/10/a7d0fa5baea8fe7b50f448ab742f26f52b80bfca85ac2be9d35cdd9a3246/pyparsing-3.0.9-py3-none-any.whl",
-                            "sha256": "5026bae9a10eeaefb61dab2f09052b9f4307d44aee4eda64b309723d8d206bbc",
+                            "url": "https://files.pythonhosted.org/packages/39/92/8486ede85fcc088f1b3dba4ce92dd29d126fd96b0008ea213167940a2475/pyparsing-3.1.1-py3-none-any.whl",
+                            "sha256": "32c7c0b711493c72ff18a981d24f28aaf9c1fb7ed5e9667c9e84e3db623bdbfb",
                             "x-checker-data": {
                                 "type": "pypi",
                                 "name": "pyparsing",
@@ -364,21 +363,17 @@
                         "/sbin"
                     ],
                     "config-opts": [
-                        "-Dgtk_doc=disabled",
-                        "-Dsystemd=disabled"
+                        "-Dgtk_doc=disabled"
                     ],
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://download.gnome.org/sources/phodav/2.5/phodav-2.5.tar.xz",
-                            "sha256": "71f0a9cd70afd4dd1412a0298331dbb8ac71c0377f52117afc15eb88dc6fb910",
+                            "url": "https://download.gnome.org/sources/phodav/3.0/phodav-3.0.tar.xz",
+                            "sha256": "392ec2d06d50300dcff1ef269a2a985304e29bce3520002fca29f2edc1d138d1",
                             "x-checker-data": {
                                 "type": "gnome",
                                 "name": "phodav",
-                                "stable-only": false,
-                                "versions": {
-                                    "<": "3"
-                                }
+                                "stable-only": false
                             }
                         }
                     ]
@@ -420,8 +415,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/jedisct1/libsodium/archive/1.0.18-RELEASE.tar.gz",
-                    "sha256": "b7292dd1da67a049c8e78415cd498ec138d194cfdb302e716b08d26b80fecc10",
+                    "url": "https://github.com/jedisct1/libsodium/archive/1.0.19.tar.gz",
+                    "sha256": "1d281a8a5e299a38e5c16ff60f293bba0796dc0fda8e49bc582d4bc1935572ed",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1728,
@@ -441,13 +436,14 @@
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
                 "-DWITH_NACL:BOOL=ON",
                 "-DNACL_INCLUDE_DIR:PATH=/app/include/",
-                "-DWITH_EXAMPLES:BOOL=OFF"
+                "-DWITH_EXAMPLES:BOOL=OFF",
+                "-DWITH_GCRYPT:BOOL=ON"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.libssh.org/files/0.10/libssh-0.10.4.tar.xz",
-                    "sha256": "07392c54ab61476288d1c1f0a7c557b50211797ad00c34c3af2bbc4dbc4bd97d",
+                    "url": "https://www.libssh.org/files/0.10/libssh-0.10.5.tar.xz",
+                    "sha256": "b60e2ff7f367b9eee2b5634d3a63303ddfede0e6a18dfca88c44a8770e7e4234",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1729,
@@ -483,6 +479,21 @@
             ]
         },
         {
+            "name": "curl",
+            "buildsystem": "autotools",
+            "cleanup": [],
+            "config-opts": [
+                "--with-openssl"
+            ],
+            "sources": [
+                {
+                "type": "archive",
+                "url": "https://github.com/curl/curl/releases/download/curl-7_81_0/curl-7.81.0.tar.xz",
+                "sha256": "a067b688d1645183febc31309ec1f3cdce9213d02136b6a6de3d50f69c95a7d3"
+                }
+            ]
+        },
+        {
             "name": "freerdp",
             "buildsystem": "cmake-ninja",
             "cleanup": [],
@@ -502,7 +513,6 @@
                 "-DWITH_SAMPLE:BOOL=OFF",
                 "-DWITH_CUPS:BOOL=ON",
                 "-DWITH_FFMPEG:BOOL=ON",
-                "-DWITH_DSP_FFMPEG:BOOL=ON",
                 "-DWITH_OSS:BOOL=OFF",
                 "-DWITH_PULSE:BOOL=ON",
                 "-DWITH_LIBSYSTEMD:BOOL=OFF"
@@ -511,8 +521,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.9.0",
-                    "commit": "fa8e1b1c765a4466030ac52240f052c0b440a4d1",
+                    "tag": "2.11.2",
+                    "commit": "a38c1be9eee39a9bc22b511fffe96e63fdf8ebe7",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
