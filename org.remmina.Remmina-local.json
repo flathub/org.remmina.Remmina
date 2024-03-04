@@ -21,7 +21,7 @@
         "--share=ipc",
         "--share=network",
         "--socket=cups",
-        "--socket=fallback-x11",
+        "--socket=x11",
         "--socket=pcsc",
         "--socket=pulseaudio",
         "--socket=ssh-auth",
@@ -487,9 +487,40 @@
             ],
             "sources": [
                 {
-                "type": "archive",
-                "url": "https://github.com/curl/curl/releases/download/curl-7_81_0/curl-7.81.0.tar.xz",
-                "sha256": "a067b688d1645183febc31309ec1f3cdce9213d02136b6a6de3d50f69c95a7d3"
+                    "type": "archive",
+                    "url": "https://github.com/curl/curl/releases/download/curl-7_81_0/curl-7.81.0.tar.xz",
+                    "sha256": "a067b688d1645183febc31309ec1f3cdce9213d02136b6a6de3d50f69c95a7d3"
+                }
+            ]
+        },
+        {
+            "name": "pkcs11-helper",
+            "buildsystem": "autotools",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/OpenSC/pkcs11-helper.git",
+                    "tag": "pkcs11-helper-1.29.0",
+                    "commit": "2306f896c2f3c147792300155316fd65825aabad"
+                },
+                {
+                    "type": "script",
+                    "dest-filename": "autogen.sh",
+                    "commands": [
+                        "autoreconf -vfi"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "krb5",
+            "buildsystem": "autotools",
+            "subdir": "src",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://kerberos.org/dist/krb5/1.21/krb5-1.21.1.tar.gz",
+                    "sha256": "7881c3aaaa1b329bd27dbc6bf2bf1c85c5d0b6c7358aff2b35d513ec2d50fa1f"
                 }
             ]
         },
@@ -515,14 +546,19 @@
                 "-DWITH_FFMPEG:BOOL=ON",
                 "-DWITH_OSS:BOOL=OFF",
                 "-DWITH_PULSE:BOOL=ON",
-                "-DWITH_LIBSYSTEMD:BOOL=OFF"
+                "-DWITH_LIBSYSTEMD:BOOL=OFF",
+                "-DWITH_FUSE:BOOL=OFF",
+                "-DWITH_WEBVIEW:BOOL=OFF",
+                "-DWITH_PKCS11:BOOL=ON",
+                "-DWITH_KRB5:BOOL=ON",
+                "-DALLOW_IN_SOURCE_BUILD=ON"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.11.2",
-                    "commit": "a38c1be9eee39a9bc22b511fffe96e63fdf8ebe7",
+                    "tag": "3.2.0",
+                    "commit": "bb87d4ca5072c40e83ed92130a6674bf245d1f2f",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -542,7 +578,7 @@
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE:STRING=Debug",
                 "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
-                "-DWITH_FREERDP3:BOOL=OFF",
+                "-DWITH_FREERDP3:BOOL=ON",
                 "-DWITH_GVNC:BOOL=ON",
                 "-DWITH_CUPS:BOOL=ON",
                 "-DWITH_PYTHONLIBS:BOOL=ON",
