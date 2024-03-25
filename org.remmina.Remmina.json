@@ -1,7 +1,7 @@
 {
     "app-id": "org.remmina.Remmina",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "44",
+    "runtime-version": "46",
     "sdk": "org.gnome.Sdk",
     "command": "remmina",
     "cleanup": [
@@ -47,14 +47,14 @@
     "add-extensions": {
         "org.freedesktop.Platform.ffmpeg-full": {
             "directory": "lib/ffmpeg",
-            "version": "22.08",
+            "version": "23.08",
             "add-ld-path": ".",
             "no-autodownload": false,
             "autodelete": false
         },
         "org.freedesktop.Platform.openh264": {
             "directory": "lib/openh264",
-            "version": "2.3.0",
+            "version": "2.4.1",
             "add-ld-path": "."
         }
     },
