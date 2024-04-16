@@ -87,8 +87,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://xorg.freedesktop.org/archive/individual/lib/libXmu-1.2.0.tar.xz",
-                    "sha256": "072026fe305889538e5b0c5f9cbcd623d2c27d2b85dcd37ca369ab21590b6963",
+                    "url": "https://xorg.freedesktop.org/archive/individual/lib/libXmu-1.2.1.tar.xz",
+                    "sha256": "fcb27793248a39e5fcc5b9c4aec40cc0734b3ca76aac3d7d1c264e7f7e14e8b2",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1785,
@@ -344,9 +344,6 @@
                     ]
                 },
                 {
-                    /**
-                    * For webdav (shared folder) support
-                    */
                     "name": "phodav",
                     "buildsystem": "meson",
                     "cleanup": [
@@ -512,8 +509,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.11.2",
-                    "commit": "a38c1be9eee39a9bc22b511fffe96e63fdf8ebe7",
+                    "tag": "3.5.0",
+                    "commit": "cab5adde26950fb6a2c47b7bcce4fbe6061c36d6",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
