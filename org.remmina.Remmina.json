@@ -87,8 +87,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://xorg.freedesktop.org/archive/individual/lib/libXmu-1.2.0.tar.xz",
-                    "sha256": "072026fe305889538e5b0c5f9cbcd623d2c27d2b85dcd37ca369ab21590b6963",
+                    "url": "https://xorg.freedesktop.org/archive/individual/lib/libXmu-1.2.1.tar.xz",
+                    "sha256": "fcb27793248a39e5fcc5b9c4aec40cc0734b3ca76aac3d7d1c264e7f7e14e8b2",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1785,
@@ -125,8 +125,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/OpenPrinting/cups/archive/refs/tags/v2.4.7.tar.gz",
-                    "sha256": "9b9a126018462f7326baa828bdf861939e37e00bc63884e03129b3f3360c44fe",
+                    "url": "https://github.com/OpenPrinting/cups/archive/refs/tags/v2.4.8.tar.gz",
+                    "sha256": "4cca3693f076542006c663a8debc883ddac3050da3d4a4a43e760efcb12cd4b3",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 380,
@@ -159,8 +159,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag": "0.76.0",
-                    "commit": "3c29bfef30c34afec4982ba5ec37f944cfacbba2",
+                    "tag": "0.76.2",
+                    "commit": "160054483748508c1c1a938601e83635783d1ac4",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -344,9 +344,6 @@
                     ]
                 },
                 {
-                    /**
-                    * For webdav (shared folder) support
-                    */
                     "name": "phodav",
                     "buildsystem": "meson",
                     "cleanup": [
@@ -512,8 +509,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.11.2",
-                    "commit": "a38c1be9eee39a9bc22b511fffe96e63fdf8ebe7",
+                    "tag": "3.5.1",
+                    "commit": "eda5c99686e15327f2f37b9cadf307e852b96adf",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
