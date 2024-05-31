@@ -159,8 +159,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag": "0.76.0",
-                    "commit": "3c29bfef30c34afec4982ba5ec37f944cfacbba2",
+                    "tag": "0.76.2",
+                    "commit": "160054483748508c1c1a938601e83635783d1ac4",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -344,9 +344,6 @@
                     ]
                 },
                 {
-                    /**
-                    * For webdav (shared folder) support
-                    */
                     "name": "phodav",
                     "buildsystem": "meson",
                     "cleanup": [
@@ -512,8 +509,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.11.2",
-                    "commit": "a38c1be9eee39a9bc22b511fffe96e63fdf8ebe7",
+                    "tag": "3.5.1",
+                    "commit": "eda5c99686e15327f2f37b9cadf307e852b96adf",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
