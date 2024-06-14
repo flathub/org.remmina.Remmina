@@ -503,14 +503,15 @@
                 "-DWITH_FFMPEG:BOOL=ON",
                 "-DWITH_OSS:BOOL=OFF",
                 "-DWITH_PULSE:BOOL=ON",
-                "-DWITH_LIBSYSTEMD:BOOL=OFF"
+                "-DWITH_LIBSYSTEMD:BOOL=OFF",
+                "-DALLOW_IN_SOURCE_BUILD=ON"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "3.5.1",
-                    "commit": "eda5c99686e15327f2f37b9cadf307e852b96adf",
+                    "tag": "2.11.2",
+                    "commit": "a38c1be9eee39a9bc22b511fffe96e63fdf8ebe7",,
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
