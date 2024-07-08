@@ -125,8 +125,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/OpenPrinting/cups/archive/refs/tags/v2.4.9.tar.gz",
-                    "sha256": "b01fe197e9e81c1516412c73c782f5d9fef671ce998e3ee207cdf6e09155b76f",
+                    "url": "https://github.com/OpenPrinting/cups/archive/refs/tags/v2.4.10.tar.gz",
+                    "sha256": "f51b9edd631db1830b967101b51f0045c8c239ae799dff89f0399f3e47a95c02",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 380,
@@ -159,8 +159,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag": "0.76.0",
-                    "commit": "3c29bfef30c34afec4982ba5ec37f944cfacbba2",
+                    "tag": "0.76.3",
+                    "commit": "036bc3ddcbb56f05c6ca76712a53b89dee1369e2",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -510,8 +510,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "2.11.2",
-                    "commit": "a38c1be9eee39a9bc22b511fffe96e63fdf8ebe7",
+                    "tag": "3.6.3",
+                    "commit": "ffe75ce7b1cec71716139d4b01cf46fb5cab3ed0",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
