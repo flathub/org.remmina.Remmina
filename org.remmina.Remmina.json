@@ -540,7 +540,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "commit": "df5de5854a10d6f868ccea3ee2c1c8c885b778b3",
+                    "commit": "35164d56c8aa57eeabb986096c06ad3db2f679da",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
