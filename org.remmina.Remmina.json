@@ -534,7 +534,8 @@
                 "-DWITH_GVNC:BOOL=ON",
                 "-DWITH_CUPS:BOOL=ON",
                 "-DWITH_PYTHONLIBS:BOOL=ON",
-                "-DWITH_MANPAGES:BOOL=OFF"
+                "-DWITH_MANPAGES:BOOL=OFF",
+                "-DWITH_KF5WALLET:BOOL=OFF"
             ],
             "sources": [
                 {
