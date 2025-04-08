@@ -543,7 +543,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "branch": "master"
+                    "tag": "v1.4.40",
+                    "commit": "31ffcf0f59fc702ae0ffc2483c898ed73e0d25b6"
                 }
             ]
         }
