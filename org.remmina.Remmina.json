@@ -544,7 +544,7 @@
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
                     "tag": "v1.4.40",
-                    "commit": "31ffcf0f59fc702ae0ffc2483c898ed73e0d25b6"
+                    "commit": "f1e9e8a6725de57bcbca1b4bf1b5d817123cb260"
                 }
             ]
         }
