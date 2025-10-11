@@ -127,8 +127,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/OpenPrinting/cups/archive/refs/tags/v2.4.12.tar.gz",
-                    "sha256": "7a4d32822b320aa2999b18fdfc4ce5ca9ad204fe6302ff69e6c24b21f8d0eaa0",
+                    "url": "https://github.com/OpenPrinting/cups/archive/refs/tags/v2.4.14.tar.gz",
+                    "sha256": "ad044f42b0bfbaca934d511dd8ab0c021345db02d6bd2d8b981ee1eedef983dc",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 380,
@@ -144,8 +144,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gtk-vnc/1.3/gtk-vnc-1.3.1.tar.xz",
-                    "sha256": "512763ac4e0559d0158b6682ca5dd1a3bd633f082f5e4349d7158e6b5f80f1ce",
+                    "url": "https://download.gnome.org/sources/gtk-vnc/1.5/gtk-vnc-1.5.0.tar.xz",
+                    "sha256": "c0beb4747528ad931da43acc567c6a0190f7fc624465571ed9ccece02c34dd23",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gtk-vnc",
@@ -161,8 +161,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag": "0.76.3",
-                    "commit": "036bc3ddcbb56f05c6ca76712a53b89dee1369e2",
+                    "tag": "0.82.1",
+                    "commit": "aa9b69140f48a019ccc72a3a27a1ddd85b9622ed",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -292,8 +292,8 @@
                     "sources": [
                         {
                             "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/05/e7/df2285f3d08fee213f2d041540fa4fc9ca6c2d44cf36d3a035bf2a8d2bcc/pyparsing-3.2.3-py3-none-any.whl",
-                            "sha256": "a749938e02d6fd0b59b356ca504a24982314bb090c383e3cf201c95ef7e2bfcf",
+                            "url": "https://files.pythonhosted.org/packages/10/5e/1aa9a93198c6b64513c9d7752de7422c06402de6600a8767da1524f9570b/pyparsing-3.2.5-py3-none-any.whl",
+                            "sha256": "e38a4f02064cf41fe6593d328d0512495ad1f3d8a91c4f73fc401b3079a59a5e",
                             "x-checker-data": {
                                 "type": "pypi",
                                 "name": "pyparsing",
@@ -374,8 +374,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.spice-space.org/download/releases/spice-protocol-0.14.4.tar.xz",
-                            "sha256": "04ffba610d9fd441cfc47dfaa135d70096e60b1046d2119d8db2f8ea0d17d912",
+                            "url": "https://www.spice-space.org/download/releases/spice-protocol-0.14.5.tar.xz",
+                            "sha256": "baf58449f6e89d19f475899ad5fb9196fdc46c03cc53233f4e39cf2978f9cff7",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 14892,
@@ -433,8 +433,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.libssh.org/files/0.11/libssh-0.11.1.tar.xz",
-                    "sha256": "14b7dcc72e91e08151c58b981a7b570ab2663f630e7d2837645d5a9c612c1b79",
+                    "url": "https://www.libssh.org/files/0.11/libssh-0.11.3.tar.xz",
+                    "sha256": "7d8a1361bb094ec3f511964e78a5a4dba689b5986e112afabe4f4d0d6c6125c3",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1729,
@@ -459,8 +459,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.14.tar.gz",
-                    "sha256": "83104e4f7e28b02f8bf6b010d69b626fae591f887e949816305daebae527c9a5",
+                    "url": "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.15.tar.gz",
+                    "sha256": "62352c7795e231dfce044beb96156065a05a05c974e5de9e023d688d8ff675d7",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1756,
@@ -516,8 +516,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "3.15.0",
-                    "commit": "0ce68ddd1cd6ed067392a17d9858c739f2bf37ec",
+                    "tag": "3.17.2",
+                    "commit": "955ad49545919c35ed731bc7716b26ddf888833a",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -552,7 +552,6 @@
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
                     }
-
                 }
             ]
         }
