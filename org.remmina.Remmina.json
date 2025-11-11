@@ -144,8 +144,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gtk-vnc/1.3/gtk-vnc-1.3.1.tar.xz",
-                    "sha256": "512763ac4e0559d0158b6682ca5dd1a3bd633f082f5e4349d7158e6b5f80f1ce",
+                    "url": "https://download.gnome.org/sources/gtk-vnc/1.5/gtk-vnc-1.5.0.tar.xz",
+                    "sha256": "c0beb4747528ad931da43acc567c6a0190f7fc624465571ed9ccece02c34dd23",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gtk-vnc",
@@ -161,8 +161,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag": "0.76.3",
-                    "commit": "036bc3ddcbb56f05c6ca76712a53b89dee1369e2",
+                    "tag": "0.82.1",
+                    "commit": "aa9b69140f48a019ccc72a3a27a1ddd85b9622ed",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -292,8 +292,8 @@
                     "sources": [
                         {
                             "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/05/e7/df2285f3d08fee213f2d041540fa4fc9ca6c2d44cf36d3a035bf2a8d2bcc/pyparsing-3.2.3-py3-none-any.whl",
-                            "sha256": "a749938e02d6fd0b59b356ca504a24982314bb090c383e3cf201c95ef7e2bfcf",
+                            "url": "https://files.pythonhosted.org/packages/10/5e/1aa9a93198c6b64513c9d7752de7422c06402de6600a8767da1524f9570b/pyparsing-3.2.5-py3-none-any.whl",
+                            "sha256": "e38a4f02064cf41fe6593d328d0512495ad1f3d8a91c4f73fc401b3079a59a5e",
                             "x-checker-data": {
                                 "type": "pypi",
                                 "name": "pyparsing",
@@ -505,8 +505,7 @@
                         "project-id": 21330,
                         "stable-only": true,
                         "type": "anitya",
-                        "url-template":
-                            "https://github.com/DaveGamble/cJSON/archive/refs/tags/v${version0}.${version1}.${version2}.tar.gz"
+                        "url-template": "https://github.com/DaveGamble/cJSON/archive/refs/tags/v${version0}.${version1}.${version2}.tar.gz"
                     }
                 }
             ]
@@ -545,8 +544,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "3.15.0",
-                    "commit": "0ce68ddd1cd6ed067392a17d9858c739f2bf37ec",
+                    "tag": "3.17.2",
+                    "commit": "955ad49545919c35ed731bc7716b26ddf888833a",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -581,7 +580,6 @@
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
                     }
-
                 }
             ]
         }
