@@ -235,6 +235,7 @@
             "name": "pcsc",
             "config-opts": [
                 "--disable-libsystemd",
+                "--disable-polkit",
                 "--enable-pic",
                 "--disable-libusb",
                 "--enable-shared",
@@ -244,12 +245,16 @@
                 {
                     "type": "git",
                     "url": "https://github.com/LudovicRousseau/PCSC.git",
-                    "tag": "pcsc-1.9.0",
-                    "commit": "e796a0f12fbefa459bff0d25e27089615fa91f21",
+                    "tag": "2.3.3",
+                    "commit": "3ef55e02979de6834015b380c1d21671eeb4e9f5",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^pcsc-([\\d.]+)$"
                     }
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/pcsc-lite-protocol.patch"
                 }
             ]
         },
