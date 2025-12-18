@@ -161,8 +161,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag": "0.76.3",
-                    "commit": "036bc3ddcbb56f05c6ca76712a53b89dee1369e2",
+                    "tag": "0.82.2",
+                    "commit": "1e7f7d58520b858458b5388ecdb25ba762dcd584",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -245,8 +245,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/LudovicRousseau/PCSC.git",
-                    "tag": "2.3.3",
-                    "commit": "3ef55e02979de6834015b380c1d21671eeb4e9f5",
+                    "tag": "pcsc-1.9.0",
+                    "commit": "e796a0f12fbefa459bff0d25e27089615fa91f21",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^pcsc-([\\d.]+)$"
@@ -585,7 +585,6 @@
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
                     }
-
                 }
             ]
         }
