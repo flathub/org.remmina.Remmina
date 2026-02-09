@@ -1,9 +1,15 @@
 {
     "app-id": "org.remmina.Remmina",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "48",
+    "runtime-version": "49",
     "sdk": "org.gnome.Sdk",
     "command": "remmina",
+    /**
+    * Needed to prevent compile error with dbus-glib 
+    * with newer versions of compiler
+    */
+    "build-options" : {
+        "cflags": "-std=gnu17"    },
     "cleanup": [
         "*.a",
         "*.la",
@@ -46,33 +52,11 @@
         "--filesystem=home",
         "--filesystem=xdg-download"
     ],
-    "add-extensions": {
-        "org.freedesktop.Platform.ffmpeg-full": {
-            "directory": "lib/ffmpeg",
-            "version": "24.08",
-            "add-ld-path": ".",
-            "no-autodownload": false,
-            "autodelete": false
-        },
-        "org.freedesktop.Platform.openh264": {
-            "directory": "lib/openh264",
-            "version": "2.4.1",
-            "add-ld-path": "."
-        }
-    },
-    "cleanup-commands": [
-        "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg",
-        "mkdir -p ${FLATPAK_DEST}/lib/openh264"
-    ],
     "modules": [
-        "shared-modules/intltool/intltool-0.51.json",
-        "shared-modules/dbus-glib/dbus-glib.json",
         "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
-        "shared-modules/libusb/libusb.json",
+        "shared-modules/intltool/intltool-0.51.json",
+        
         {
-            /**
-            * libfreerdp uses xprop to try to detect keyboard layout
-            */
             "name": "xprop",
             "sources": [
                 {
@@ -88,9 +72,6 @@
             ]
         },
         {
-            /**
-            * Remmina uses xauth, that needs libXmu
-            */
             "name": "libXmu",
             "sources": [
                 {
@@ -314,6 +295,25 @@
                     ]
                 },
                 {
+                    "name": "python3-six",
+                    "buildsystem": "simple",
+                    "build-commands": [
+                        "pip3 install --verbose --exists-action=i --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} six --no-build-isolation"
+                    ],
+                    "sources": [
+                        {
+                            "type": "file",
+                            "url": "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl",
+                            "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+                            "x-checker-data": {
+                                "type": "pypi",
+                                "name": "six",
+                                "packagetype": "bdist_wheel"
+                            }
+                        }
+                    ]
+                    },
+                {
                     "name": "libcacard",
                     "buildsystem": "meson",
                     "config-opts": [
@@ -464,7 +464,8 @@
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
                 "-DWITH_EXAMPLES:BOOL=OFF",
-                "-DWITH_TESTS:BOOL=OFF"
+                "-DWITH_TESTS:BOOL=OFF",
+                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
             ],
             "cleanup": [
                 "/bin",
@@ -484,21 +485,6 @@
             ]
         },
         {
-            "name": "curl",
-            "buildsystem": "autotools",
-            "cleanup": [],
-            "config-opts": [
-                "--with-openssl"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/curl/curl/releases/download/curl-7_81_0/curl-7.81.0.tar.xz",
-                    "sha256": "a067b688d1645183febc31309ec1f3cdce9213d02136b6a6de3d50f69c95a7d3"
-                }
-            ]
-        },
-        {
             "builddir": true,
             "buildsystem": "cmake-ninja",
             "cleanup": [],
@@ -507,7 +493,8 @@
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
                 "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
                 "-DENABLE_CJSON_TEST:BOOL=OFF",
-                "-DENABLE_CJSON_UTILS:BOOL=OFF"
+                "-DENABLE_CJSON_UTILS:BOOL=OFF",
+                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
             ],
             "name": "cjson",
             "sources": [
@@ -520,6 +507,39 @@
                         "stable-only": true,
                         "type": "anitya",
                         "url-template": "https://github.com/DaveGamble/cJSON/archive/refs/tags/v${version0}.${version1}.${version2}.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "builddir": true,
+            "buildsystem": "cmake-ninja",
+            "cleanup": [
+                "/include",
+                "/lib/*.la",
+                "/lib/*.a",
+                "/lib/cmake",
+                "/share/aclocal",
+                "/lib/pkgconfig"
+            ],
+            "config-opts": [
+                "-DCMAKE_VERBOSE_MAKEFILE=ON",
+                "-DCMAKE_BUILD_TYPE:STRING=Release",
+                "-DCMAKE_INSTALL_LIBDIR:PATH=lib"
+            ],
+            "name": "SDL3_ttf",
+            "sources": [
+                {
+                    "sha256": "63547d58d0185c833213885b635a2c0548201cc8f301e6587c0be1a67e1e045d",
+                    "type": "archive",
+                    "url":
+                        "https://github.com/libsdl-org/SDL_ttf/releases/download/release-3.2.2/SDL3_ttf-3.2.2.tar.gz",
+                    "x-checker-data": {
+                        "project-id": 4784,
+                        "stable-only": true,
+                        "type": "anitya",
+                        "url-template":
+                            "https://github.com/libsdl-org/SDL_ttf/releases/download/release-${version}/SDL3_ttf-${version}.tar.gz"
                     }
                 }
             ]
@@ -552,7 +572,9 @@
                 "-DWITH_PKCS11:BOOL=ON",
                 "-DWITH_WINPR_JSON:BOOL=ON",
                 "-DWITH_AAD:BOOL=ON",
-                "-DALLOW_IN_SOURCE_BUILD=ON"
+                "-DALLOW_IN_SOURCE_BUILD=ON",
+                "-DWITH_CLIENT_SDL3=ON",
+                "-DWITH_CLIENT_SDL2=OFF"
             ],
             "sources": [
                 {
