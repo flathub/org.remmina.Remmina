@@ -4,7 +4,8 @@
     "runtime-version": "49",
     "sdk": "org.gnome.Sdk",
     "command": "remmina",
-
+    "build-options" : {
+        "cflags": "-std=gnu17"    },
     "cleanup": [
         "*.a",
         "*.la",
