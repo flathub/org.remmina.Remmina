@@ -603,8 +603,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/Remmina/Remmina.git",
-                    "tag": "v1.4.42",
-                    "commit": "82b066d607d18ebf9b909d167b8ac06628cd97ff",
+                    "tag": "v1.4.43",
+                    "commit": "7be0cf2348d149c6bf5bd882fe91d3bec7d6aebb",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
