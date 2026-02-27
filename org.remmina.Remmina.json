@@ -610,7 +610,7 @@
                 "-DWITH_CUPS:BOOL=ON",
                 "-DWITH_PYTHONLIBS:BOOL=ON",
                 "-DWITH_MANPAGES:BOOL=OFF",
-                "-DWITH_KF5WALLET:BOOL=OFF"
+                "-DWITH_KF5WALLET:BOOL=OFF",
                 "-DWITH_RDP_AUTH_AAD:BOOL=ON"
             ],
             "sources": [
