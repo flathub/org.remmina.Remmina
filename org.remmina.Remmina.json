@@ -1,11 +1,12 @@
 {
     "app-id": "org.remmina.Remmina",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "49",
+    "runtime-version": "51",
     "sdk": "org.gnome.Sdk",
     "command": "remmina",
-    "build-options" : {
-        "cflags": "-std=gnu17"    },
+    "build-options": {
+        "cflags": "-std=gnu17"
+    },
     "cleanup": [
         "*.a",
         "*.la",
@@ -51,7 +52,6 @@
     "modules": [
         "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
         "shared-modules/intltool/intltool-0.51.json",
-        
         {
             "name": "xprop",
             "sources": [
@@ -72,8 +72,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://xorg.freedesktop.org/archive/individual/lib/libXmu-1.2.1.tar.xz",
-                    "sha256": "fcb27793248a39e5fcc5b9c4aec40cc0734b3ca76aac3d7d1c264e7f7e14e8b2",
+                    "url": "https://xorg.freedesktop.org/archive/individual/lib/libXmu-1.3.1.tar.xz",
+                    "sha256": "81a99e94c4501e81c427cbaa4a11748b584933e94b7a156830c3621256857bc4",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1785,
@@ -87,8 +87,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://xorg.freedesktop.org/archive/individual/app/xauth-1.1.4.tar.xz",
-                    "sha256": "e9318141464ad7b4dc0f8564a580f0d20f977c85a388cc40d5a766206151c690",
+                    "url": "https://xorg.freedesktop.org/archive/individual/app/xauth-1.1.5.tar.xz",
+                    "sha256": "a4000e2f441facebf569026bedecc23ba262cc6927be52070abe0002625cfbe0",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 5253,
@@ -110,13 +110,13 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/OpenPrinting/cups/archive/refs/tags/v2.4.16.tar.gz",
-                    "sha256": "051f4bbfa10924ea399e2a8bef2d94fa3cd8dc8876c5fb4e0a57d23396203395",
+                    "url": "https://github.com/OpenPrinting/cups/releases/download/v2.4.20/cups-2.4.20-source.tar.gz",
+                    "sha256": "ab4d9cd7f3e58060091d2b24972223d6401675f11c49b65abf4f6ef31dea22ff",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 380,
                         "stable-only": false,
-                        "url-template": "https://github.com/OpenPrinting/cups/archive/refs/tags/v$version.tar.gz"
+                        "url-template": "https://github.com/OpenPrinting/cups/releases/download/v$version/cups-$version-source.tar.gz"
                     }
                 }
             ]
@@ -140,15 +140,22 @@
         {
             "name": "vte",
             "buildsystem": "meson",
+            "config-opts": [
+                "-Ddocs=false",
+                "-Dgir=false",
+                "-Dgtk3=true",
+                "-Dgtk4=false",
+                "-Dvapi=false"
+            ],
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag": "0.76.3",
-                    "commit": "036bc3ddcbb56f05c6ca76712a53b89dee1369e2",
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/vte/0.84/vte-0.84.1.tar.xz",
+                    "sha256": "aca1caa8478aebcdbb1d67897fb3511eb7601debae6810e16a15b6fa25f31ac8",
                     "x-checker-data": {
-                        "type": "git",
-                        "tag-pattern": "^([\\d.]+)$"
+                        "type": "gnome",
+                        "name": "vte",
+                        "stable-only": true
                     }
                 }
             ]
@@ -202,12 +209,12 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/libevent/libevent/releases/download/release-2.1.12-stable//libevent-2.1.12-stable.tar.gz",
-                            "sha256": "92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb",
+                            "url": "https://github.com/libevent/libevent/releases/download/release-2.1.13-stable/libevent-2.1.13-stable.tar.gz",
+                            "sha256": "f7e9383b8c0baa81b687e5b5eecc01beefaf1b19b64151d95ed61647fe7a315c",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 1606,
-                                "url-template": "https://github.com/libevent/libevent/releases/download/release-$version-stable//libevent-$version-stable.tar.gz"
+                                "url-template": "https://github.com/libevent/libevent/releases/download/release-$version-stable/libevent-$version-stable.tar.gz"
                             }
                         }
                     ]
@@ -216,28 +223,25 @@
         },
         {
             "name": "pcsc",
+            "buildsystem": "meson",
             "config-opts": [
-                "--disable-libsystemd",
-                "--disable-polkit",
-                "--enable-pic",
-                "--disable-libusb",
-                "--enable-shared",
-                "--with-systemdsystemunitdir=/app/lib/systemd/"
+                "-Dlibsystemd=false",
+                "-Dlibudev=false",
+                "-Dlibusb=false",
+                "-Dpolkit=false",
+                "-Dserial=false",
+                "-Dusb=false"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/LudovicRousseau/PCSC.git",
-                    "tag": "2.3.3",
-                    "commit": "3ef55e02979de6834015b380c1d21671eeb4e9f5",
+                    "tag": "2.5.3",
+                    "commit": "58de510789550941e6548399e024083f54b8d4f5",
                     "x-checker-data": {
                         "type": "git",
-                        "tag-pattern": "^pcsc-([\\d.]+)$"
+                        "tag-pattern": "^([\\d.]+)$"
                     }
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/pcsc-lite-protocol.patch"
                 }
             ]
         },
@@ -257,8 +261,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.spice-space.org/download/gtk/spice-gtk-0.42.tar.xz",
-                    "sha256": "9380117f1811ad1faa1812cb6602479b6290d4a0d8cc442d44427f7f6c0e7a58",
+                    "url": "https://www.spice-space.org/download/gtk/spice-gtk-0.43.tar.xz",
+                    "sha256": "cee26e5b2d22909f35b40a94398d1e863ca3962ee46494ca97aab206abc3203b",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 11576,
@@ -280,8 +284,8 @@
                     "sources": [
                         {
                             "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/10/5e/1aa9a93198c6b64513c9d7752de7422c06402de6600a8767da1524f9570b/pyparsing-3.2.5-py3-none-any.whl",
-                            "sha256": "e38a4f02064cf41fe6593d328d0512495ad1f3d8a91c4f73fc401b3079a59a5e",
+                            "url": "https://files.pythonhosted.org/packages/38/bb/d215ee7c73b61497b28a5503f9f53523f294fcc936762b7caf90e0c1c2b5/pyparsing-3.3.3-py3-none-any.whl",
+                            "sha256": "ece8c00a69cf01b45d0b1dedabb469c90d8caf996d4fda40f147627a122849a4",
                             "x-checker-data": {
                                 "type": "pypi",
                                 "name": "pyparsing",
@@ -308,7 +312,7 @@
                             }
                         }
                     ]
-                    },
+                },
                 {
                     "name": "libcacard",
                     "buildsystem": "meson",
@@ -319,8 +323,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.spice-space.org/download/libcacard/libcacard-2.8.1.tar.xz",
-                            "sha256": "fbbf4de8cb7db5bdff5ecb672ff0dbe6939fb9f344b900d51ba6295329a332e7",
+                            "url": "https://www.spice-space.org/download/libcacard/libcacard-2.8.2.tar.xz",
+                            "sha256": "45fc28a6ff3c7a359d4448132ca190f0a9c760540c445dba4597a5b71de40f68",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 18776,
@@ -342,8 +346,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/lz4/lz4/archive/v1.10.0/lz4-1.10.0.tar.gz",
-                            "sha256": "537512904744b35e232912055ccf8ec66d768639ff3abe5788d90d792ec5f48b",
+                            "url": "https://github.com/lz4/lz4/archive/v1.11.0/lz4-1.11.0.tar.gz",
+                            "sha256": "247e5fa64da5f7b75ee3dd3bed484076396c9ebe8254d9ccf693eb62800c5e26",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 1865,
@@ -360,13 +364,16 @@
                         "/sbin"
                     ],
                     "config-opts": [
-                        "-Dgtk_doc=disabled"
+                        "-Ddocs=disabled",
+                        "-Dsystemdsystemunitdir=/app/lib/systemd/system",
+                        "-Dsysusersdir=/app/lib/sysusers.d",
+                        "-Dudevrulesdir=/app/lib/udev/rules.d"
                     ],
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://download.gnome.org/sources/phodav/3.0/phodav-3.0.tar.xz",
-                            "sha256": "392ec2d06d50300dcff1ef269a2a985304e29bce3520002fca29f2edc1d138d1",
+                            "url": "https://download.gnome.org/sources/phodav/3.2/phodav-3.2.tar.xz",
+                            "sha256": "93c993066ab3aebd5b539bab9d731eac43abbb750109c895f151ca3c74a5fc82",
                             "x-checker-data": {
                                 "type": "gnome",
                                 "name": "phodav",
@@ -402,7 +409,12 @@
                         {
                             "type": "git",
                             "url": "https://gitlab.freedesktop.org/spice/usbredir.git",
-                            "commit": "5fc0e1c43194d948545941d408f4c10d084eb6ed"
+                            "tag": "usbredir-0.15.0",
+                            "commit": "41c79583a4eecaf6cfe938278554210c718c85d2",
+                            "x-checker-data": {
+                                "type": "git",
+                                "tag-pattern": "^usbredir-([\\d.]+)$"
+                            }
                         }
                     ]
                 }
@@ -413,8 +425,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.libsodium.org/libsodium/releases/libsodium-1.0.20.tar.gz",
-                    "sha256": "ebb65ef6ca439333c2bb41a0c1990587288da07f6c7fd07cb3a18cc18d30ce19",
+                    "url": "https://download.libsodium.org/libsodium/releases/libsodium-1.0.22.tar.gz",
+                    "sha256": "adbdd8f16149e81ac6078a03aca6fc03b592b89ef7b5ed83841c086191be3349",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1728,
@@ -440,12 +452,12 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.libssh.org/files/0.11/libssh-0.11.3.tar.xz",
-                    "sha256": "7d8a1361bb094ec3f511964e78a5a4dba689b5986e112afabe4f4d0d6c6125c3",
+                    "url": "https://www.libssh.org/files/0.12/libssh-0.12.2.tar.xz",
+                    "sha256": "49560f677d96e3706a904ac2de1116e25f3680937d51e5c92198fcba4a1c1e9f",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1729,
-                        "url-template": "https://www.libssh.org/files/0.11/libssh-$version.tar.xz"
+                        "url-template": "https://www.libssh.org/files/${version0}.${version1}/libssh-$version.tar.xz"
                     }
                 }
             ]
@@ -525,14 +537,35 @@
                 {
                     "sha256": "63547d58d0185c833213885b635a2c0548201cc8f301e6587c0be1a67e1e045d",
                     "type": "archive",
-                    "url":
-                        "https://github.com/libsdl-org/SDL_ttf/releases/download/release-3.2.2/SDL3_ttf-3.2.2.tar.gz",
+                    "url": "https://github.com/libsdl-org/SDL_ttf/releases/download/release-3.2.2/SDL3_ttf-3.2.2.tar.gz",
                     "x-checker-data": {
                         "project-id": 4784,
                         "stable-only": true,
                         "type": "anitya",
-                        "url-template":
-                            "https://github.com/libsdl-org/SDL_ttf/releases/download/release-${version}/SDL3_ttf-${version}.tar.gz"
+                        "url-template": "https://github.com/libsdl-org/SDL_ttf/releases/download/release-${version}/SDL3_ttf-${version}.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "uriparser",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE:STRING=Release",
+                "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
+                "-DURIPARSER_BUILD_DOCS:BOOL=OFF",
+                "-DURIPARSER_BUILD_TESTS:BOOL=OFF",
+                "-DURIPARSER_BUILD_TOOLS:BOOL=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/uriparser/uriparser.git",
+                    "tag": "uriparser-1.0.3",
+                    "commit": "fe754ef0d62c882747222c4455cb028b03dca33b",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^uriparser-([\\d.]+)$"
                     }
                 }
             ]
@@ -573,8 +606,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FreeRDP/FreeRDP.git",
-                    "tag": "3.20.0",
-                    "commit": "b8e790a02ede8dd64ff7177fb9027d1844e66bb6",
+                    "tag": "3.33.0",
+                    "commit": "5a10d7b6b79a2fbc62e8eba77085cd356dc303a6",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -585,6 +618,7 @@
         {
             "name": "remmina",
             "buildsystem": "cmake-ninja",
+            "builddir": true,
             "cleanup": [
                 "/bin/remmina-gnome",
                 "/bin/gnome-session-remmina",
@@ -609,7 +643,6 @@
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
                     }
-
                 }
             ]
         }
