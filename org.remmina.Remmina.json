@@ -628,6 +628,7 @@
                 "-DCMAKE_BUILD_TYPE:STRING=Release",
                 "-DCMAKE_INSTALL_LIBDIR:PATH=lib",
                 "-DWITH_FREERDP3:BOOL=ON",
+                "-DWITH_RDP_AUTH_AAD=ON",
                 "-DWITH_GVNC:BOOL=ON",
                 "-DWITH_CUPS:BOOL=ON",
                 "-DWITH_PYTHONLIBS:BOOL=ON",
